@@ -84,7 +84,23 @@
     - **Valor mensual liberado: $225.000 CLP**
     - **Valor anual liberado: $2.700.000 CLP**
 
-12. **Debrief — interrogatorio del "gerente escéptico"** (ejercicio de pitch, práctica del módulo) y plan de acción:
+12. **Monitoreo y Alertas** — sistema de dos niveles para detectar errores técnicos:
+
+    **Nivel 1 (Inmediato)**: 
+    - Si la app crashea, se registra el error completo en `error.log` (hora exacta, tipo de error, stack trace, archivo/línea)
+    - Se envía correo automático a **María Daniela Salinas** (mdani6010@gmail.com) con los detalles del error y la URL de la app
+    - El archivo `error.log` se commitea a GitHub para auditoría y trazabilidad histórica
+
+    **Nivel 2 (Escalación > 1 día)**:
+    - Script `check_escalation.py` verifica si hay errores en `error.log` de más de 1 día sin resolver
+    - Si los encuentra, envía correo de escalación a **Gerencia de Contabilidad** (eduardo.silva.h@gmail.com)
+    - Puede ejecutarse manualmente cada mañana, vía cron job local, o como GitHub Action diario
+    
+    **Configuración requerida** (una única vez):
+    - En Streamlit Cloud, agregar secretos: `GMAIL_USER` (email de envío) y `GMAIL_APP_PASSWORD` (contraseña de aplicación de Gmail — no la contraseña real)
+    - Crear una "contraseña de aplicación" en la cuenta de Google: https://myaccount.google.com/apppasswords (requiere autenticación de dos factores)
+
+13. **Debrief — interrogatorio del "gerente escéptico"** (ejercicio de pitch, práctica del módulo) y plan de acción:
 
     | # | Pregunta que destapó el punto débil | Por qué es débil | Acción concreta | Responsable | Estado |
     |---|---|---|---|---|---|

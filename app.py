@@ -9,11 +9,15 @@ Reglas del piloto:
 - Si faltan datos clave en una fila, se avisa y esa fila se excluye del analisis.
 """
 import io
+import sys
+import traceback
 from datetime import date
 from pathlib import Path
 
 import pandas as pd
 import streamlit as st
+
+from error_handler import registrar_error
 
 CARPETA_DATOS = Path(__file__).parent / "datos"
 COLUMNAS_REQUERIDAS = [
@@ -480,19 +484,27 @@ def render_acerca():
     st.markdown(ruta_prd.read_text(encoding="utf-8"))
 
 
-if verificar_acceso():
-    st.title("Analisis Inteligente de Cuentas — Piloto")
-    st.caption(
-        "\"Inteligente\" = aplica reglas y logica contable de forma sistematica — "
-        "NO usa un modelo de IA/LLM en tiempo de ejecucion. Detecta duplicidades, "
-        "saldos contrarios, partidas antiguas y diferencias de cuadratura con reglas "
-        "fijas: no se inventa nada."
+try:
+    if verificar_acceso():
+        st.title("Analisis Inteligente de Cuentas — Piloto")
+        st.caption(
+            "\"Inteligente\" = aplica reglas y logica contable de forma sistematica — "
+            "NO usa un modelo de IA/LLM en tiempo de ejecucion. Detecta duplicidades, "
+            "saldos contrarios, partidas antiguas y diferencias de cuadratura con reglas "
+            "fijas: no se inventa nada."
+        )
+
+        tab_tablero, tab_acerca = st.tabs(["Tablero", "Acerca de / Gobernanza"])
+
+        with tab_tablero:
+            render_tablero()
+
+        with tab_acerca:
+            render_acerca()
+except Exception:
+    exc_type, exc_value, exc_traceback = sys.exc_info()
+    registrar_error(
+        exc_type, exc_value, exc_traceback,
+        url_app="mdani6010-sys-analisis-inteligente-cuentas-app-4hvlat.streamlit.app"
     )
-
-    tab_tablero, tab_acerca = st.tabs(["Tablero", "Acerca de / Gobernanza"])
-
-    with tab_tablero:
-        render_tablero()
-
-    with tab_acerca:
-        render_acerca()
+    st.error("❌ Error técnico en la aplicación. El equipo ha sido notificado. Reintenta en unos minutos.")
