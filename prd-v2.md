@@ -56,7 +56,9 @@
 
 10. **Gobernanza**:
     - **Quién puede usarlo**: exclusivo para personal del área contable/financiera (analistas, supervisores, auditoría interna) — no es una herramienta de uso general. El link no se comparte fuera del equipo. ⚠️ **Brecha conocida, sin corregir**: esto es una política, no un control técnico — la URL es pública y no tiene login (ver Alcance, sección 8: "NO: Login/usuarios/permisos"). Cualquiera con el link accede, no solo el área contable. Corregirlo requiere agregar autenticación (fuera del alcance del piloto).
-    - **Dueño del sistema**: los Analistas Contables del Departamento de Contabilidad. Son responsables de qué datos suben, de revisar los resultados y de cualquier decisión tomada a partir del análisis.
+    - **Dueño del sistema**: María Daniela Salinas (Analista Contable). Decide si el proceso cambia o se detiene. Si cambia el dueño, es el **Gerente de Contabilidad** quien asigna a la nueva persona responsable.
+    - **Quién se entera si falla**: María Daniela Salinas — el aviso le llega directamente a ella (no queda solo registrado en el Excel o en GitHub sin que nadie lo vea).
+    - **Quién autoriza escalarlo**: el **Gerente de Contabilidad** da el visto bueno para que el tablero se use fuera del equipo actual (ej. que lo use Auditoría Interna u otra área).
     - **Rol del sistema vs. rol humano**: el tablero **detecta y prioriza** (semáforo + comentarios por reglas); **no decide ni ejecuta** ninguna acción contable. La decisión final y el ajuste en el sistema contable siempre los hace el analista humano.
     - **Trazabilidad**: cada análisis queda respaldado en el Excel exportado (fecha, reglas aplicadas, resultado por cuenta) — sirve como evidencia ante auditoría interna o externa. Los cambios al código y la lógica de detección quedan versionados en GitHub (quién cambió qué y cuándo).
     - **Manejo de resultados**: no hay base de datos ni almacenamiento en servidor — cada análisis se descarga como Excel y cada analista guarda su propia copia como respaldo. Los datos ficticios/reales que se suben al tablero no quedan guardados en Streamlit Cloud entre sesiones.
