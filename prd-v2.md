@@ -23,6 +23,9 @@
    - No inventar ni suponer: los comentarios se basan solo en reglas fijas sobre los datos, nunca en inferencias no verificables.
    - Ser crítico: alertar activamente cuando falten datos necesarios para evaluar una anomalía (ej. columna vacía, fecha inválida).
    - Marcar explícitamente cualquier caso dudoso en vez de omitirlo.
+   - **Ajustado a un perfil senior** (analista contable con +13 años de experiencia): sin explicaciones básicas de contabilidad ni lenguaje introductorio — el comentario va directo al hallazgo y su magnitud.
+   - Cada comentario debe ser trazable a la regla exacta que lo generó (ej. "tasa de duplicidad > 3%"), para que el analista pueda auditar la lógica y no tenga que confiar a ciegas.
+   - El sistema no reemplaza el criterio profesional del analista: es apoyo para priorizar dónde mirar primero, no un veredicto final.
 
 7. **Si automatizas** — disparador + pasos:
    Disparador: el usuario sube un archivo Excel/CSV al tablero.
@@ -48,6 +51,14 @@
    - **Código fuente**: [github.com/mdani6010-sys/analisis-inteligente-cuentas](https://github.com/mdani6010-sys/analisis-inteligente-cuentas) — cada cambio queda como un commit, se puede volver a una versión anterior si algo se rompe.
    - **App en vivo**: [mdani6010-sys-analisis-inteligente-cuentas-app-4hvlat.streamlit.app](https://mdani6010-sys-analisis-inteligente-cuentas-app-4hvlat.streamlit.app/) — sin login, cualquiera con el link entra.
    - **Despliegue**: Streamlit Community Cloud, conectado directo al repo de GitHub (rama `main`, archivo `app.py`). Cada vez que se sube un cambio (`git push`), la app publicada se actualiza sola en 1-2 minutos.
+
+10. **Gobernanza**:
+    - **Quién puede usarlo**: exclusivo para personal del área contable/financiera (analistas, supervisores, auditoría interna) — no es una herramienta de uso general. El link no se comparte fuera del equipo.
+    - **Dueño del sistema**: los Analistas Contables del Departamento de Contabilidad. Son responsables de qué datos suben, de revisar los resultados y de cualquier decisión tomada a partir del análisis.
+    - **Rol del sistema vs. rol humano**: el tablero **detecta y prioriza** (semáforo + comentarios por reglas); **no decide ni ejecuta** ninguna acción contable. La decisión final y el ajuste en el sistema contable siempre los hace el analista humano.
+    - **Trazabilidad**: cada análisis queda respaldado en el Excel exportado (fecha, reglas aplicadas, resultado por cuenta) — sirve como evidencia ante auditoría interna o externa. Los cambios al código y la lógica de detección quedan versionados en GitHub (quién cambió qué y cuándo).
+    - **Manejo de resultados**: no hay base de datos ni almacenamiento en servidor — cada análisis se descarga como Excel y cada analista guarda su propia copia como respaldo. Los datos ficticios/reales que se suben al tablero no quedan guardados en Streamlit Cloud entre sesiones.
+    - **Límite explícito**: el sistema no debe usarse como única fuente para cerrar o certificar un período contable — es una herramienta de apoyo para acelerar la revisión, no un reemplazo del proceso de cierre.
 
 ---
 **Próximo paso** (lo más chico que demuestra valor):
