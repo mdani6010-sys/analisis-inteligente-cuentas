@@ -98,9 +98,18 @@ UMBRAL_DUPLICADOS_ROJO = 0.03
 UMBRAL_ANTIGUEDAD = 0.20
 UMBRAL_CUADRATURA_MODERADO = 500
 UMBRAL_CUADRATURA_GRAVE = 50_000
+# Con menos filas que esto, un porcentaje (ej. "40% duplicado") es ruido
+# estadistico, no una senal real -- se avisa aparte, no se omite.
+UMBRAL_MUESTRA_CHICA = 10
 
 
-def construir_resumen(df, saldos_f01):
+def construir_resumen(df, saldos_f01, naturaleza_overrides=None):
+    """naturaleza_overrides: dict opcional {cuenta_contable: {"naturaleza": str,
+    "confirmada": bool}}. Si una cuenta no viene en el dict (o no se pasa nada),
+    se usa el supuesto por prefijo (naturaleza_esperada) y queda marcada como
+    no confirmada -- asi el analista sabe cuando "saldo_contrario" se apoya en
+    un supuesto y cuando en un dato verificado del plan de cuentas real."""
+    naturaleza_overrides = naturaleza_overrides or {}
     df = df.copy()
     # errors="coerce": si llega una fecha invalida hasta aca (no deberia, el
     # flujo normal ya la filtro antes), no revienta la app, queda como NaT.
@@ -111,7 +120,13 @@ def construir_resumen(df, saldos_f01):
 
     filas_resumen = []
     for cuenta, grupo in df.groupby("cuenta_contable"):
-        naturaleza = naturaleza_esperada(cuenta)
+        override = naturaleza_overrides.get(cuenta)
+        if override and override.get("naturaleza") in ("deudora", "acreedora"):
+            naturaleza = override["naturaleza"]
+            naturaleza_confirmada = bool(override.get("confirmada"))
+        else:
+            naturaleza = naturaleza_esperada(cuenta)
+            naturaleza_confirmada = False
         saldo_neto = grupo["monto"].sum()
 
         saldo_contrario = False
@@ -147,6 +162,11 @@ def construir_resumen(df, saldos_f01):
             comentarios.append(
                 f"Saldo contrario a su naturaleza ({naturaleza}): saldo neto {saldo_neto:,.0f}."
             )
+            if not naturaleza_confirmada:
+                comentarios.append(
+                    "Naturaleza asumida por el prefijo de cuenta (no confirmada): "
+                    "verificar el plan de cuentas real antes de tomar esto como definitivo."
+                )
         if tasa_antiguas > UMBRAL_ANTIGUEDAD:
             comentarios.append(
                 f"{n_antiguas} partidas con antiguedad mayor a {DIAS_ANTIGUEDAD} dias — "
@@ -176,6 +196,7 @@ def construir_resumen(df, saldos_f01):
         filas_resumen.append({
             "cuenta_contable": cuenta,
             "naturaleza_esperada": naturaleza,
+            "naturaleza_confirmada": naturaleza_confirmada,
             "saldo_neto": round(saldo_neto, 2),
             "duplicidades": n_duplicados,
             "saldo_contrario": saldo_contrario,
@@ -183,15 +204,61 @@ def construir_resumen(df, saldos_f01):
             "diferencia_cuadratura": diferencia_cuadratura,
             "semaforo": semaforo,
             "comentario": " ".join(comentarios),
+            "n_filas": n_filas,
+            "tasa_duplicados": round(tasa_duplicados, 4),
+            "tasa_antiguas": round(tasa_antiguas, 4),
         })
 
-    resumen = pd.DataFrame(filas_resumen).sort_values(
+    resumen = pd.DataFrame(filas_resumen)
+
+    # Aviso de confiabilidad: el semaforo no debe verse igual de "seguro" en
+    # una cuenta con pocos movimientos (% poco confiable) o con un patron muy
+    # fuera de lo comun frente al resto del archivo -- se marca aparte, sin
+    # tocar el color del semaforo (que sigue siendo 100% por umbral fijo).
+    resumen["muestra_chica"] = resumen["n_filas"] < UMBRAL_MUESTRA_CHICA
+    resumen["atipico_vs_otras_cuentas"] = False
+    if len(resumen) >= 4:
+        for col in ["tasa_duplicados", "tasa_antiguas"]:
+            q1, q3 = resumen[col].quantile([0.25, 0.75])
+            iqr = q3 - q1
+            if iqr > 0:
+                resumen["atipico_vs_otras_cuentas"] |= resumen[col] > (q3 + 1.5 * iqr)
+
+    def _aviso(row):
+        notas = []
+        if row["muestra_chica"]:
+            notas.append(
+                f"Muestra chica (n={row['n_filas']}): los porcentajes pueden no ser "
+                "confiables, revisar igual aunque no cruce ningun umbral."
+            )
+        if row["atipico_vs_otras_cuentas"]:
+            notas.append(
+                "Patron fuera de lo comun frente a las demas cuentas de este archivo: "
+                "revisar con cuidado extra."
+            )
+        return " ".join(notas)
+
+    resumen["aviso_confiabilidad"] = resumen.apply(_aviso, axis=1)
+    resumen["comentario"] = resumen["comentario"] + resumen["aviso_confiabilidad"].apply(
+        lambda t: f" ⚠ {t}" if t else ""
+    )
+
+    resumen = resumen.sort_values(
         by="semaforo", key=lambda s: s.map({"Negro": 0, "Rojo": 1, "Amarillo": 2, "Verde": 3})
     )
     return df, resumen
 
 
 COLOR_SEMAFORO = {"Verde": "#d4edda", "Amarillo": "#fff3cd", "Rojo": "#f8d7da", "Negro": "#343a40"}
+
+# Columnas que se muestran en pantalla (las de detalle estadistico -- n_filas,
+# tasas, flags crudos -- quedan solo en el Excel exportado para no saturar la
+# vista rapida; el comentario ya narra lo relevante de esas columnas).
+COLUMNAS_RESUMEN_UI = [
+    "cuenta_contable", "naturaleza_esperada", "naturaleza_confirmada", "saldo_neto",
+    "duplicidades", "saldo_contrario", "partidas_antiguas", "diferencia_cuadratura",
+    "semaforo", "comentario",
+]
 
 
 def pintar_semaforo(val):
@@ -321,7 +388,42 @@ def render_tablero():
             + "Quedan disponibles en la pestana 'Datos_faltantes' del Excel exportado."
         )
 
-    detalle, resumen = construir_resumen(df_validas, saldos_f01)
+    cuentas_unicas = sorted(df_validas["cuenta_contable"].dropna().unique(), key=str)
+    tabla_naturaleza_base = pd.DataFrame({
+        "cuenta_contable": cuentas_unicas,
+        "naturaleza": [naturaleza_esperada(c) for c in cuentas_unicas],
+        "confirmada": False,
+    })
+    with st.expander(
+        "Naturaleza deudora/acreedora por cuenta (ajustar si tu plan de cuentas es distinto)"
+    ):
+        st.caption(
+            "Por defecto se asume por el primer digito de la cuenta (1/5=deudora, "
+            "2/3/4=acreedora) -- es solo un supuesto, puede no aplicar a tu plan de "
+            "cuentas real. Corrige la naturaleza si hace falta y marca 'confirmada' "
+            "para las cuentas que ya verificaste; mientras no la marques, cualquier "
+            "'saldo contrario' que salga para esa cuenta queda etiquetado como no "
+            "confirmado en vez de darlo por bueno en silencio."
+        )
+        tabla_naturaleza = st.data_editor(
+            tabla_naturaleza_base,
+            column_config={
+                "cuenta_contable": st.column_config.TextColumn("Cuenta", disabled=True),
+                "naturaleza": st.column_config.SelectboxColumn(
+                    "Naturaleza", options=["deudora", "acreedora", "desconocida"]
+                ),
+                "confirmada": st.column_config.CheckboxColumn("Confirmada"),
+            },
+            hide_index=True,
+            use_container_width=True,
+            key="tabla_naturaleza",
+        )
+    naturaleza_overrides = {
+        row["cuenta_contable"]: {"naturaleza": row["naturaleza"], "confirmada": row["confirmada"]}
+        for _, row in tabla_naturaleza.iterrows()
+    }
+
+    detalle, resumen = construir_resumen(df_validas, saldos_f01, naturaleza_overrides)
     detalle_marcado = identificar_compensaciones(detalle)
     n_compensadas = int(detalle_marcado["compensada"].sum())
 
@@ -344,9 +446,14 @@ def render_tablero():
     # --- Tabla resumen por cuenta ---
     st.subheader("Semaforo por cuenta")
     st.dataframe(
-        resumen.style.map(pintar_semaforo, subset=["semaforo"]),
+        resumen[COLUMNAS_RESUMEN_UI].style.map(pintar_semaforo, subset=["semaforo"]),
         use_container_width=True,
         hide_index=True,
+    )
+    st.caption(
+        "⚠ en el comentario = aviso de confiabilidad (muestra chica o patron atipico "
+        "frente a otras cuentas de este archivo), no cambia el color del semaforo. "
+        "Detalle completo (n de filas, tasas) disponible en el Excel exportado."
     )
 
     # --- Detalle de filas flagged ---

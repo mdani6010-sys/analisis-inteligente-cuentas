@@ -27,7 +27,9 @@
    - **Ajustado a un perfil senior** (analista contable con +13 años de experiencia): sin explicaciones básicas de contabilidad ni lenguaje introductorio — el comentario va directo al hallazgo y su magnitud.
    - Cada comentario debe ser trazable a la regla exacta que lo generó (ej. "tasa de duplicidad > 3%"), para que el analista pueda auditar la lógica y no tenga que confiar a ciegas. ✅ (antes el comentario mostraba solo el conteo, no el umbral cruzado — corregido).
    - El sistema no reemplaza el criterio profesional del analista: es apoyo para priorizar dónde mirar primero, no un veredicto final.
-   - **Umbrales calibrados con datos ficticios, no reales**: los porcentajes que definen el semáforo (ej. duplicidad > 3%, antigüedad > 20%) se ajustaron mirando cómo se comportaba el dataset sintético. El semáforo se muestra con la misma confianza visual sin importar si el caso es típico o atípico — no hay forma de que el tablero avise "este caso es raro, revísalo con más cuidado". Antes de usarlo en producción, los umbrales deben recalibrarse con datos reales, y cuentas con patrones inusuales (nuevas, estacionales, de cierre, fusiones) requieren revisión manual extra en vez de confiar solo en el color.
+   - **Umbrales calibrados con datos ficticios, no reales**: los porcentajes que definen el semáforo (ej. duplicidad > 3%, antigüedad > 20%) se ajustaron mirando cómo se comportaba el dataset sintético. Antes de usarlo en producción, los umbrales deben recalibrarse con datos reales. ⚠ **Parcialmente mitigado**: el tablero ahora sí avisa cuando un caso es "raro" — ver el punto siguiente.
+   - **Aviso de confiabilidad por caso atípico o muestra chica** ✅: cada cuenta se compara contra las demás del mismo archivo (rango intercuartílico sobre tasa de duplicidad y de antigüedad); si su patrón se sale de lo común, o si tiene muy pocas filas (<10) para que un porcentaje sea confiable, el comentario suma un aviso `⚠` explícito — sin cambiar el color del semáforo, para no ocultar el hallazgo real pero sí bajarle la confianza. Resuelve directamente el riesgo de "el sistema suena igual de seguro sepa o no sepa" (práctica del módulo, "Momento de la duda").
+   - **Naturaleza deudora/acreedora confirmable, no asumida en silencio** ✅: por defecto se sigue infiriendo por el primer dígito de la cuenta (supuesto, igual que antes), pero ahora el analista puede corregirla y marcarla "confirmada" en una tabla editable dentro del tablero. Mientras una cuenta no esté confirmada, cualquier "saldo contrario" que salga para ella queda etiquetado en el comentario como basado en un supuesto sin verificar — nunca se da por bueno en silencio.
 
 7. **Si automatizas** — disparador + pasos:
    Disparador: el usuario sube un archivo Excel/CSV al tablero.
@@ -41,6 +43,8 @@
    - Comentarios explicativos basados en reglas (sin IA/API de pago)
    - Alertas de datos faltantes o dudosos
    - Exportar resultados a Excel: **Detalle_Limpio** (con columna `antiguedad_dias` y `monto_duplicado`, y con las partidas que se compensan entre sí ya sacadas), **Partidas_Compensadas** (mismo monto, signo contrario, misma cuenta — se anulan, pero quedan trazables con `par_compensacion` para auditarlas), **Detalle_Completo** (todo, sin filtrar) y **Datos_faltantes**
+   - Tabla editable para confirmar/corregir la naturaleza (deudora/acreedora) por cuenta, en vez de confiar ciegamente en el supuesto por prefijo
+   - Aviso `⚠` de confiabilidad por muestra chica (<10 filas) o patrón atípico frente a otras cuentas del mismo archivo (no cambia el color del semáforo, solo baja la confianza del hallazgo)
 
    **NO (por ahora):**
    - Conexión real a SAP (FBL3N / F.01)
