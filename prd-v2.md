@@ -44,16 +44,14 @@
    - Comparación automática contra el balance F.01 real
    - Rearmar como Frontend (Netlify) + Backend (Supabase) — se evaluó y se descartó por ahora: Streamlit ya cumple frontend+backend en uno, y alcanza para que otros usuarios lo usen vía URL. Se reconsidera si el proyecto necesita guardar datos persistentes entre sesiones (ahí sí conviene Supabase).
 
-9. **Publicación y versionado**:
-   - **Código fuente**: repositorio en GitHub — cada cambio queda como un commit, se puede volver a una versión anterior si algo se rompe.
-   - **Despliegue**: Streamlit Community Cloud, conectado directo al repo de GitHub. Cada vez que se sube un cambio (`git push`), la app publicada se actualiza sola.
-   - **Acceso**: URL pública gratuita tipo `tu-usuario-nombre-app.streamlit.app`, sin login (cualquiera con el link entra).
+9. **Publicación y versionado** — ✅ hecho:
+   - **Código fuente**: [github.com/mdani6010-sys/analisis-inteligente-cuentas](https://github.com/mdani6010-sys/analisis-inteligente-cuentas) — cada cambio queda como un commit, se puede volver a una versión anterior si algo se rompe.
+   - **App en vivo**: [mdani6010-sys-analisis-inteligente-cuentas-app-4hvlat.streamlit.app](https://mdani6010-sys-analisis-inteligente-cuentas-app-4hvlat.streamlit.app/) — sin login, cualquiera con el link entra.
+   - **Despliegue**: Streamlit Community Cloud, conectado directo al repo de GitHub (rama `main`, archivo `app.py`). Cada vez que se sube un cambio (`git push`), la app publicada se actualiza sola en 1-2 minutos.
 
 ---
 **Próximo paso** (lo más chico que demuestra valor):
-Tablero construido y probado localmente ✅. Sigue: crear cuenta de GitHub (si no tiene), subir el proyecto a un repositorio, y publicarlo en Streamlit Community Cloud para que otros usuarios entren por URL.
+Tablero construido, probado y **publicado** ✅ (código en GitHub, app en vivo en Streamlit Cloud). Sigue: conseguir datos reales de SAP (aunque sea de una sola cuenta) para validar el tablero contra un caso real, no solo ficticio.
 
 **Qué falta para empezar** (datos / insumos):
-- Cuenta de GitHub (la crea el alumno; el agente no puede crear cuentas por él).
-- Confirmar el nombre del repositorio.
-- Cuando haya datos reales de SAP (FBL3N/F.01), se reemplaza el dataset ficticio por el real sin cambiar la lógica del tablero.
+- Datos reales de SAP (FBL3N/F.01) — cuando estén, se reemplaza el dataset ficticio por el real sin cambiar la lógica del tablero.
