@@ -4,6 +4,7 @@ anomalias insertadas a proposito, para probar el tablero (app.py).
 
 No usa datos reales de ninguna empresa: todo es sintetico.
 """
+import json
 import random
 from datetime import date, timedelta
 from pathlib import Path
@@ -132,6 +133,16 @@ for codigo in CUENTAS_CON_DESCUADRE:
     saldos_reales.loc[saldos_reales["cuenta_contable"] == codigo, "saldo_f01_esperado"] += delta
 
 saldos_reales.to_csv(CARPETA_DATOS / "saldos_f01.csv", index=False)
+
+# --- Respuesta correcta, para poder evaluar la deteccion del tablero despues ---
+ground_truth = {
+    "saldo_contrario": sorted(CUENTAS_SALDO_CONTRARIO),
+    "antiguedad_alta": sorted(CUENTAS_ANTIGUEDAD_ALTA),
+    "duplicados_alta": sorted(CUENTAS_DUPLICADOS_ALTA),
+    "descuadre": sorted(CUENTAS_CON_DESCUADRE),
+}
+with open(CARPETA_DATOS / "ground_truth.json", "w", encoding="utf-8") as f:
+    json.dump(ground_truth, f, indent=2, ensure_ascii=False)
 
 print(f"Listo. {len(df)} filas generadas en {CARPETA_DATOS / 'movimientos.xlsx'}")
 print(f"- Duplicidades insertadas: {N_DUPLICADOS} filas")

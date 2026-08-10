@@ -14,10 +14,11 @@
 4. **Decisiones con evidencia** (qué dicen tus datos):
    Aún no hay datos reales — se parte con **datos ficticios** (3000 registros, últimos 3 meses + algunas fechas más antiguas intercaladas) para construir y probar el piloto antes de conectar con SAP real.
 
-5. **Métrica de éxito** (verificable):
-   - El tablero detecta correctamente las 4 anomalías sobre el set de datos ficticios (verificable comparando contra los casos que se insertaron a propósito).
+5. **Métrica de éxito** (verificable) — ✅ verificado con `test_deteccion.py`:
+   - El tablero detecta correctamente las 4 anomalías sobre el set de datos ficticios: **12/12 cuentas (100%)** coinciden con la respuesta correcta (`datos/ground_truth.json`, generada junto con los datos). Evaluación ciega: primero corre la detección, recién después se compara contra la respuesta conocida.
    - Los comentarios generados por reglas son coherentes con cada anomalía (no genéricos ni inventados).
    - El Excel exportado refleja exactamente lo mostrado en el tablero.
+   - Correr `python test_deteccion.py` después de cualquier cambio a la lógica de detección, para confirmar que sigue en 100% antes de subir el cambio.
 
 6. **Guardrails / estilo**:
    - No inventar ni suponer: los comentarios se basan solo en reglas fijas sobre los datos, nunca en inferencias no verificables.
