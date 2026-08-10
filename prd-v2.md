@@ -62,6 +62,22 @@
     - **Manejo de resultados**: no hay base de datos ni almacenamiento en servidor — cada análisis se descarga como Excel y cada analista guarda su propia copia como respaldo. Los datos ficticios/reales que se suben al tablero no quedan guardados en Streamlit Cloud entre sesiones.
     - **Límite explícito**: el sistema no debe usarse como única fuente para cerrar o certificar un período contable — es una herramienta de apoyo para acelerar la revisión, no un reemplazo del proceso de cierre.
 
+11. **Ficha económica** (estimación con datos entregados por el usuario, no verificada contra nómina real):
+
+    | # | Pregunta | Respuesta |
+    |---|---|---|
+    | 1 | Qué tarea reemplaza | Revisión manual en Excel de movimientos contables para detectar duplicidades, saldos contrarios, partidas antiguas (>90 días) y diferencias de cuadratura contra F.01. |
+    | 2 | Cuánto demora hoy a mano | 30-60 min por cuenta, ~10 cuentas por analista → 5 a 10 horas/mes por analista (revisión mensual). |
+    | 3 | Cuánto demora con el agente | ~2-3 minutos de punta a punta — procesa las 10 cuentas en una sola corrida (no cuenta por cuenta). Procesamiento puro medido: 0.57s para 3000 filas / 12 cuentas. |
+    | 4 | Cuánto cuesta una corrida completa | $0 — reglas fijas sin IA de pago, hosting gratuito (Streamlit Community Cloud). |
+    | 5 | Horas liberadas al mes | ~10 horas/analista (usando el extremo superior del rango; el tiempo del agente, 2-3 min, es marginal frente al ahorro). |
+
+    **Conversión a dinero** (supuestos: tarifa día $60.000 CLP para Analista Contable senior, jornada de 8 horas/día, equipo de 3 analistas):
+    - Valor hora: $60.000 ÷ 8 = **$7.500 CLP/hora**
+    - Horas liberadas (equipo): 10 horas × 3 analistas = **30 horas/mes**
+    - **Valor mensual liberado: $225.000 CLP**
+    - **Valor anual liberado: $2.700.000 CLP**
+
 ---
 **Próximo paso** (lo más chico que demuestra valor):
 Tablero construido, probado y **publicado** ✅ (código en GitHub, app en vivo en Streamlit Cloud). Sigue: conseguir datos reales de SAP (aunque sea de una sola cuenta) para validar el tablero contra un caso real, no solo ficticio.
