@@ -55,9 +55,10 @@ GLOSAS = [
 N_DUPLICADOS_ALTA = 45
 N_DUPLICADOS_OTRAS = 15
 N_DUPLICADOS = N_DUPLICADOS_ALTA + N_DUPLICADOS_OTRAS
+N_COMPENSADAS_PARES = 8  # pares con mismo monto absoluto, signo contrario, misma cuenta
 N_MISSING = 35
 N_TOTAL = 3000
-N_BASE = N_TOTAL - N_DUPLICADOS
+N_BASE = N_TOTAL - N_DUPLICADOS - (N_COMPENSADAS_PARES * 2)
 
 filas = []
 for i in range(N_BASE):
@@ -97,15 +98,46 @@ df = pd.DataFrame(filas)
 
 # --- Insertar duplicidades: copiamos filas existentes tal cual (mismo documento) ---
 # La mayoria se concentra en unas pocas cuentas "problema"; el resto se reparte
-# como ruido de fondo en cualquier cuenta.
+# como ruido de fondo, repartido round-robin (max 2 por cuenta) para que el
+# azar no concentre por accidente demasiado ruido en una sola cuenta "limpia".
 idx_alta = df.index[df["cuenta_contable"].isin(CUENTAS_DUPLICADOS_ALTA)].tolist()
-idx_otras = df.index[~df["cuenta_contable"].isin(CUENTAS_DUPLICADOS_ALTA)].tolist()
-idx_a_duplicar = (
-    random.sample(idx_alta, min(N_DUPLICADOS_ALTA, len(idx_alta)))
-    + random.sample(idx_otras, min(N_DUPLICADOS_OTRAS, len(idx_otras)))
-)
+idx_a_duplicar_alta = random.sample(idx_alta, min(N_DUPLICADOS_ALTA, len(idx_alta)))
+
+cuentas_otras = [codigo for codigo, _, _ in CUENTAS if codigo not in CUENTAS_DUPLICADOS_ALTA]
+random.shuffle(cuentas_otras)
+idx_a_duplicar_otras = []
+ronda = 0
+while len(idx_a_duplicar_otras) < N_DUPLICADOS_OTRAS:
+    cuenta = cuentas_otras[ronda % len(cuentas_otras)]
+    disponibles = df.index[df["cuenta_contable"] == cuenta].difference(idx_a_duplicar_otras)
+    if len(disponibles) > 0:
+        idx_a_duplicar_otras.append(random.choice(disponibles.tolist()))
+    ronda += 1
+
+idx_a_duplicar = idx_a_duplicar_alta + idx_a_duplicar_otras
 duplicados = df.loc[idx_a_duplicar].copy()
 df = pd.concat([df, duplicados], ignore_index=True)
+
+# --- Insertar partidas compensadas: mismo monto absoluto, signo contrario, misma cuenta ---
+# (ej. un cargo y su reverso) — deben anularse entre si en el excel "limpio"
+filas_compensadas = []
+for i in range(N_COMPENSADAS_PARES):
+    codigo, nombre, naturaleza = random.choice(CUENTAS)
+    monto_abs = round(random.uniform(20_000, 500_000), 0)
+    centro = random.choice(CENTROS_COSTO)
+    moneda = "CLP" if random.random() < 0.9 else "USD"
+    ref_base = f"COMP-{i:04d}"
+    for signo, sufijo, glosa_extra in [(1, "-A", random.choice(GLOSAS)), (-1, "-B", "Reverso")]:
+        filas_compensadas.append({
+            "fecha_documento": HOY - timedelta(days=random.randint(0, 90)),
+            "monto": signo * monto_abs,
+            "moneda": moneda,
+            "glosa": f"{glosa_extra} - {nombre}",
+            "centro_costo": centro,
+            "referencia": ref_base + sufijo,
+            "cuenta_contable": codigo,
+        })
+df = pd.concat([df, pd.DataFrame(filas_compensadas)], ignore_index=True)
 
 # --- Insertar datos faltantes en columnas clave ---
 idx_missing = random.sample(range(len(df)), N_MISSING)
@@ -146,6 +178,7 @@ with open(CARPETA_DATOS / "ground_truth.json", "w", encoding="utf-8") as f:
 
 print(f"Listo. {len(df)} filas generadas en {CARPETA_DATOS / 'movimientos.xlsx'}")
 print(f"- Duplicidades insertadas: {N_DUPLICADOS} filas")
+print(f"- Partidas compensadas insertadas: {N_COMPENSADAS_PARES} pares ({N_COMPENSADAS_PARES * 2} filas)")
 print(f"- Filas con datos faltantes: {N_MISSING}")
 print(f"- Cuentas con saldo contrario a su naturaleza: {sorted(CUENTAS_SALDO_CONTRARIO)}")
 print(f"- Cuentas con descuadre vs F.01 ficticio: {sorted(CUENTAS_CON_DESCUADRE)}")

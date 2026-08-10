@@ -200,11 +200,62 @@ def pintar_semaforo(val):
     return f"background-color: {color}; color: {texto}"
 
 
+def identificar_compensaciones(detalle):
+    """Empareja, dentro de cada cuenta, partidas del mismo monto absoluto pero
+    signo contrario (ej. +150.000 y -150.000) — se anulan entre si y no aportan
+    a un analisis 'limpio'. No se borran: quedan marcadas y trazables, cada par
+    con el mismo numero de 'par_compensacion' para poder auditarlas."""
+    df = detalle.copy()
+    df["compensada"] = False
+    df["par_compensacion"] = pd.NA
+
+    par_id = 0
+    for _, grupo in df.groupby("cuenta_contable"):
+        for _, sub in grupo.groupby(grupo["monto"].abs()):
+            positivos = sub[sub["monto"] > 0].index.tolist()
+            negativos = sub[sub["monto"] < 0].index.tolist()
+            n_pares = min(len(positivos), len(negativos))
+            for i in range(n_pares):
+                par_id += 1
+                df.loc[positivos[i], ["compensada", "par_compensacion"]] = [True, par_id]
+                df.loc[negativos[i], ["compensada", "par_compensacion"]] = [True, par_id]
+    return df
+
+
+COLUMNAS_EXPORT_AMIGABLES = [
+    "fecha_documento", "cuenta_contable", "referencia", "glosa", "centro_costo",
+    "moneda", "monto", "antiguedad_dias", "monto_duplicado",
+]
+
+
+def formatear_para_export(df, incluir_par_compensacion=False):
+    """Renombra a nombres claros para el analista y traduce el flag de
+    duplicado a Si/No en vez de True/False."""
+    out = df.rename(columns={
+        "dias_antiguedad": "antiguedad_dias",
+        "es_duplicado": "monto_duplicado",
+    }).copy()
+    out["monto_duplicado"] = out["monto_duplicado"].map({True: "Si", False: "No"})
+    columnas = [c for c in COLUMNAS_EXPORT_AMIGABLES if c in out.columns]
+    if incluir_par_compensacion and "par_compensacion" in out.columns:
+        columnas = columnas + ["par_compensacion"]
+    return out[columnas]
+
+
 def exportar_excel(resumen, detalle, incompletas):
+    detalle_marcado = identificar_compensaciones(detalle)
+    detalle_limpio = detalle_marcado[~detalle_marcado["compensada"]]
+    partidas_compensadas = detalle_marcado[detalle_marcado["compensada"]]
+
     buffer = io.BytesIO()
     with pd.ExcelWriter(buffer, engine="openpyxl") as writer:
         resumen.to_excel(writer, sheet_name="Resumen", index=False)
-        detalle.to_excel(writer, sheet_name="Detalle", index=False)
+        formatear_para_export(detalle_limpio).to_excel(writer, sheet_name="Detalle_Limpio", index=False)
+        detalle.to_excel(writer, sheet_name="Detalle_Completo", index=False)
+        if not partidas_compensadas.empty:
+            formatear_para_export(partidas_compensadas, incluir_par_compensacion=True).to_excel(
+                writer, sheet_name="Partidas_Compensadas", index=False
+            )
         if not incompletas.empty:
             incompletas.to_excel(writer, sheet_name="Datos_faltantes", index=False)
     buffer.seek(0)
@@ -271,15 +322,24 @@ def render_tablero():
         )
 
     detalle, resumen = construir_resumen(df_validas, saldos_f01)
+    detalle_marcado = identificar_compensaciones(detalle)
+    n_compensadas = int(detalle_marcado["compensada"].sum())
 
     # --- Resumen ejecutivo ---
     st.subheader("Resumen ejecutivo")
-    c1, c2, c3, c4, c5 = st.columns(5)
+    c1, c2, c3, c4, c5, c6 = st.columns(6)
     c1.metric("Cuentas evaluadas", len(resumen))
     c2.metric("Cuentas Rojo/Negro", int(resumen["semaforo"].isin(["Rojo", "Negro"]).sum()))
     c3.metric("Duplicidades totales", int(resumen["duplicidades"].sum()))
     c4.metric("Partidas antiguas", int(resumen["partidas_antiguas"].sum()))
     c5.metric("Filas con datos faltantes", len(df_incompletas))
+    c6.metric("Partidas compensadas", n_compensadas)
+    if n_compensadas:
+        st.caption(
+            f"{n_compensadas} filas tienen su contraparte exacta (mismo monto, signo contrario) "
+            f"dentro de la misma cuenta — se anulan entre si. Se sacaron de 'Detalle_Limpio' en "
+            f"el Excel exportado, pero quedan intactas y trazables en 'Partidas_Compensadas'."
+        )
 
     # --- Tabla resumen por cuenta ---
     st.subheader("Semaforo por cuenta")

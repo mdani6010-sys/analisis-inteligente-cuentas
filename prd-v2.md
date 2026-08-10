@@ -40,7 +40,7 @@
    - Sistema de semáforos (verde/amarillo/rojo/negro)
    - Comentarios explicativos basados en reglas (sin IA/API de pago)
    - Alertas de datos faltantes o dudosos
-   - Exportar resultados a Excel
+   - Exportar resultados a Excel: **Detalle_Limpio** (con columna `antiguedad_dias` y `monto_duplicado`, y con las partidas que se compensan entre sí ya sacadas), **Partidas_Compensadas** (mismo monto, signo contrario, misma cuenta — se anulan, pero quedan trazables con `par_compensacion` para auditarlas), **Detalle_Completo** (todo, sin filtrar) y **Datos_faltantes**
 
    **NO (por ahora):**
    - Conexión real a SAP (FBL3N / F.01)

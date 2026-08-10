@@ -56,7 +56,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-07-23,-2263684.0,CLP,Devolucion - Capital,CC-007,DOC-000152,3101
 2026-07-30,2938083.0,CLP,Transferencia interna - Bancos,CC-001,DOC-002901,1102
 2026-02-03,-2733105.0,CLP,Nota de credito - Prestamos Bancarios,CC-007,DOC-001359,2201
-2026-07-21,955901.0,CLP,Nota de credito - Gastos Administrativos,CC-002,DOC-000772,5102
+2026-07-21,,CLP,Nota de credito - Gastos Administrativos,CC-002,DOC-000772,5102
 2026-03-28,402440.0,CLP,Nota de debito - Clientes,CC-006,DOC-002678,1201
 2026-02-10,-1672216.0,CLP,Compra de mercaderia - Capital,CC-003,DOC-001001,3101
 2026-06-24,-2313537.0,CLP,Devolucion - Gastos de Venta,CC-006,DOC-000718,5103
@@ -109,7 +109,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-05-12,617517.0,USD,Regularizacion - Inventario,CC-006,DOC-000331,1301
 2026-06-12,-1711700.0,CLP,Pago de servicios - Capital,CC-001,DOC-000093,3101
 2026-07-06,-782325.0,CLP,Provision mensual - Capital,CC-003,DOC-001641,3101
-2025-11-30,1725703.0,CLP,Pago de servicios - Bancos,CC-003,DOC-000944,1102
+2026-06-03,50703.0,CLP,Compra de mercaderia - Gastos de Venta,CC-005,COMP-0001-A,5103
 2026-05-29,-1828842.0,CLP,Compra de mercaderia - Prestamos Bancarios,CC-007,DOC-000506,2201
 2026-08-10,2078606.0,CLP,Provision mensual - Inventario,CC-005,DOC-002909,1301
 2026-06-22,964613.0,CLP,Transferencia interna - Caja,CC-004,DOC-002045,1101
@@ -119,7 +119,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-21,1588883.0,CLP,Provision mensual - Clientes,CC-001,DOC-000314,1201
 2026-07-03,-1787574.0,CLP,Nota de credito - Prestamos Bancarios,CC-003,DOC-001272,2201
 2026-05-28,935030.0,CLP,Devolucion - Caja,CC-005,DOC-001941,1101
-2026-06-12,447492.0,CLP,Compra de mercaderia - Ventas,CC-007,DOC-001020,4101
+2026-06-02,2576785.0,CLP,Regularizacion - Ventas,CC-003,DOC-002151,4101
 2026-06-08,878028.0,USD,Pago a proveedor - Gastos Administrativos,CC-006,DOC-001316,5102
 2026-06-27,-1850582.0,CLP,Ajuste contable - Proveedores,CC-008,DOC-000755,2101
 2026-08-01,1043867.0,CLP,Anticipo - Costo de Ventas,CC-001,DOC-001770,5101
@@ -127,7 +127,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-07-15,-124612.0,CLP,Cobro cliente - Gastos de Venta,CC-006,DOC-002174,5103
 2026-07-27,480977.0,CLP,Cobro cliente - Bancos,CC-003,DOC-001991,1102
 2026-07-16,-1832854.0,CLP,Transferencia interna - Capital,CC-002,DOC-000879,3101
-,-124058.0,CLP,Transferencia interna - Ventas,CC-007,DOC-000765,4101
+2026-08-08,-124058.0,CLP,Transferencia interna - Ventas,CC-007,DOC-000765,4101
 2026-05-13,-2838556.0,CLP,Nota de debito - Prestamos Bancarios,CC-004,DOC-000927,2201
 2026-08-06,2171466.0,USD,Nota de debito - Caja,CC-008,DOC-002377,1101
 2026-05-15,-2144391.0,CLP,Nota de debito - Capital,CC-007,DOC-001374,3101
@@ -145,12 +145,12 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-07-23,770901.0,CLP,Devolucion - Bancos,CC-003,DOC-002779,1102
 2026-06-04,471017.0,CLP,Nota de credito - Gastos Administrativos,CC-005,DOC-002225,5102
 2026-06-21,2103673.0,CLP,Compra de mercaderia - Proveedores,CC-004,DOC-000450,2101
-,2010705.0,CLP,Nota de debito - Proveedores,CC-003,DOC-002164,2101
+2026-06-17,2010705.0,CLP,Nota de debito - Proveedores,CC-003,DOC-002164,2101
 2026-08-03,2979412.0,CLP,Provision mensual - Proveedores,CC-004,DOC-002372,2101
 2026-07-17,1707318.0,USD,Nota de credito - Inventario,CC-006,DOC-002012,1301
 2026-06-14,2294390.0,CLP,Anticipo - Bancos,CC-002,DOC-000270,1102
 2026-07-29,1629395.0,CLP,Transferencia interna - Bancos,CC-005,DOC-001840,1102
-2026-05-30,2318594.0,CLP,Transferencia interna - Ventas,CC-008,DOC-002934,4101
+2026-07-22,2778525.0,CLP,Regularizacion - Inventario,CC-006,DOC-002229,1301
 2026-08-03,1409902.0,USD,Pago a proveedor - Gastos Administrativos,CC-002,DOC-000978,5102
 2026-07-26,2175155.0,CLP,Devolucion - Costo de Ventas,CC-004,DOC-002166,5101
 2026-05-24,-2864801.0,CLP,Nota de debito - Impuestos por Pagar,CC-006,DOC-000354,2102
@@ -222,7 +222,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2025-07-18,2598237.0,CLP,Nota de credito - Clientes,CC-005,DOC-001321,1201
 2026-07-23,2987763.0,CLP,Anticipo - Bancos,CC-002,DOC-001567,1102
 2025-10-25,-1550799.0,CLP,Compra de mercaderia - Gastos de Venta,CC-008,DOC-000783,5103
-2026-08-06,2171466.0,USD,Nota de debito - Caja,CC-008,DOC-002377,1101
+2026-05-27,-246109.0,CLP,Reverso - Bancos,CC-008,COMP-0003-B,1102
 2026-03-30,806631.0,USD,Anticipo - Clientes,CC-001,DOC-001412,1201
 2026-04-10,2491965.0,USD,Ajuste contable - Clientes,CC-004,DOC-000457,1201
 2026-07-04,-1078598.0,CLP,Provision mensual - Impuestos por Pagar,CC-007,DOC-000139,2102
@@ -231,7 +231,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-07-03,2551628.0,CLP,Cobro cliente - Bancos,CC-001,DOC-000088,1102
 2026-05-25,2525930.0,CLP,Pago de servicios - Gastos de Venta,CC-007,DOC-001442,5103
 2026-08-02,1030389.0,CLP,Provision mensual - Caja,CC-003,DOC-001831,1101
-,271623.0,CLP,Devolucion - Ventas,CC-001,DOC-002576,4101
+2026-07-28,271623.0,CLP,Devolucion - Ventas,CC-001,DOC-002576,4101
 2026-01-16,1041339.0,USD,Compra de mercaderia - Clientes,CC-002,DOC-000254,1201
 2026-08-07,-1380380.0,CLP,Pago a proveedor - Gastos de Venta,CC-003,DOC-000605,5103
 2026-06-30,2399588.0,CLP,Nomina - Clientes,CC-006,DOC-001044,1201
@@ -261,7 +261,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-07-13,-2247082.0,CLP,Anticipo - Capital,CC-007,DOC-002155,3101
 2026-06-05,2186006.0,CLP,Nomina - Bancos,CC-004,DOC-001556,1102
 2026-07-01,-2273114.0,CLP,Nota de credito - Proveedores,CC-004,DOC-001670,2101
-2026-05-31,1687242.0,CLP,Devolucion - Ventas,CC-007,DOC-000177,
+2026-05-31,1687242.0,CLP,Devolucion - Ventas,CC-007,DOC-000177,4101
 2026-07-31,2722087.0,CLP,Ajuste contable - Proveedores,CC-005,DOC-001078,2101
 2026-07-14,-2851173.0,CLP,Transferencia interna - Impuestos por Pagar,CC-001,DOC-000598,2102
 2025-07-16,1936802.0,CLP,Nota de debito - Clientes,CC-004,DOC-002190,1201
@@ -274,8 +274,8 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-07-15,2188840.0,CLP,Nota de debito - Clientes,CC-005,DOC-002268,1201
 2026-06-07,-363849.0,CLP,Regularizacion - Capital,CC-005,DOC-000533,3101
 2026-07-19,-2484706.0,CLP,Pago a proveedor - Impuestos por Pagar,CC-002,DOC-001103,2102
-2026-06-15,2397966.0,CLP,Cobro cliente - Gastos de Venta,CC-002,DOC-001106,5103
-2025-12-06,-2251479.0,CLP,Devolucion - Prestamos Bancarios,CC-001,DOC-002927,2201
+2026-06-15,2397966.0,CLP,Cobro cliente - Gastos de Venta,CC-002,DOC-001106,
+2026-07-07,-466892.0,CLP,Nota de credito - Gastos de Venta,CC-007,DOC-000357,5103
 2026-06-07,-1066648.0,CLP,Devolucion - Impuestos por Pagar,CC-002,DOC-001123,2102
 2026-05-23,-2772774.0,CLP,Compra de mercaderia - Capital,CC-003,DOC-000942,3101
 2026-07-14,-1926905.0,CLP,Pago a proveedor - Capital,CC-001,DOC-000162,3101
@@ -316,7 +316,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-07-10,-1980145.0,CLP,Provision mensual - Impuestos por Pagar,CC-002,DOC-001533,2102
 2026-07-02,579580.0,CLP,Devolucion - Costo de Ventas,CC-007,DOC-002163,5101
 2026-06-09,-1080956.0,CLP,Nota de debito - Impuestos por Pagar,CC-007,DOC-000543,2102
-2026-05-24,-1274927.0,CLP,Nomina - Gastos de Venta,CC-005,DOC-001912,5103
+2026-05-19,2105468.0,CLP,Compra de mercaderia - Ventas,CC-001,DOC-000002,4101
 2026-05-20,-2967680.0,CLP,Nota de credito - Gastos de Venta,CC-001,DOC-001818,5103
 2026-06-25,-2341724.0,CLP,Regularizacion - Gastos de Venta,CC-005,DOC-001624,5103
 2026-05-22,294695.0,CLP,Anticipo - Proveedores,CC-006,DOC-001177,2101
@@ -345,7 +345,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-04-18,2654879.0,USD,Nota de credito - Clientes,CC-005,DOC-002592,1201
 2026-06-28,-552694.0,USD,Compra de mercaderia - Gastos de Venta,CC-007,DOC-000557,5103
 2026-05-16,-1222128.0,CLP,Pago a proveedor - Impuestos por Pagar,CC-008,DOC-001475,2102
-2026-07-02,-2433756.0,CLP,Nota de debito - Capital,CC-002,DOC-002703,3101
+2026-07-02,,CLP,Nota de debito - Capital,CC-002,DOC-002703,3101
 2026-05-12,2812796.0,CLP,Pago de servicios - Caja,CC-001,DOC-000594,1101
 2026-06-26,1496008.0,CLP,Nota de credito - Gastos Administrativos,CC-007,DOC-001557,5102
 2026-07-06,284553.0,CLP,Cobro cliente - Clientes,CC-006,DOC-000411,1201
@@ -357,7 +357,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-05-26,105561.0,CLP,Nota de credito - Inventario,CC-001,DOC-000318,1301
 2026-05-17,410023.0,CLP,Pago de servicios - Caja,CC-006,DOC-002718,1101
 2026-08-02,1796786.0,CLP,Nomina - Proveedores,CC-006,DOC-000840,2101
-2026-07-07,2799407.0,CLP,Ajuste contable - Inventario,CC-002,DOC-000287,1301
+2025-07-19,-359960.0,CLP,Pago a proveedor - Gastos de Venta,CC-004,DOC-002725,5103
 2026-07-08,-33445.0,CLP,Ajuste contable - Capital,CC-003,DOC-001351,3101
 2026-06-27,1682838.0,CLP,Ajuste contable - Proveedores,CC-003,DOC-002825,2101
 2026-06-26,2838694.0,CLP,Compra de mercaderia - Gastos Administrativos,CC-001,DOC-002366,5102
@@ -398,9 +398,9 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-05-18,669133.0,CLP,Devolucion - Bancos,CC-005,DOC-000572,1102
 2026-07-04,-796054.0,CLP,Ajuste contable - Capital,CC-001,DOC-000554,3101
 2026-08-06,1998332.0,USD,Ajuste contable - Inventario,CC-006,DOC-000945,1301
-2026-07-10,707693.0,CLP,Cobro cliente - Caja,CC-002,DOC-001007,1101
+2026-05-14,440088.0,CLP,Nota de credito - Inventario,CC-007,COMP-0006-A,1301
 2026-05-18,2682431.0,CLP,Anticipo - Caja,CC-002,DOC-000874,1101
-2026-07-29,,CLP,Compra de mercaderia - Bancos,CC-001,DOC-000004,1102
+2026-08-08,266570.0,CLP,Regularizacion - Clientes,CC-004,COMP-0005-A,1201
 2026-07-29,-2679636.0,USD,Anticipo - Prestamos Bancarios,CC-005,DOC-001569,2201
 2026-06-29,-63538.0,CLP,Nomina - Capital,CC-007,DOC-002668,3101
 2026-06-10,-2083379.0,CLP,Nomina - Prestamos Bancarios,CC-003,DOC-002627,2201
@@ -449,7 +449,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-07-23,1021738.0,CLP,Cobro cliente - Gastos Administrativos,CC-003,DOC-002897,5102
 2026-08-04,-2021727.0,USD,Cobro cliente - Prestamos Bancarios,CC-001,DOC-000029,2201
 2026-06-11,1215056.0,CLP,Ajuste contable - Ventas,CC-003,DOC-002501,4101
-2026-07-23,-1393419.0,CLP,Regularizacion - Gastos de Venta,CC-002,DOC-000785,5103
+2026-07-16,-385710.0,CLP,Cobro cliente - Ventas,CC-002,DOC-001994,4101
 2026-07-20,154100.0,CLP,Anticipo - Inventario,CC-005,DOC-001047,1301
 2026-05-17,2703207.0,CLP,Pago a proveedor - Gastos de Venta,CC-008,DOC-002887,5103
 2026-06-29,1800836.0,CLP,Ajuste contable - Clientes,CC-005,DOC-001421,1201
@@ -488,11 +488,11 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-08-04,863119.0,CLP,Pago de servicios - Inventario,CC-008,DOC-002112,1301
 2026-07-17,2332770.0,CLP,Ajuste contable - Bancos,CC-004,DOC-002417,1102
 2026-06-19,2613444.0,USD,Cobro cliente - Caja,CC-008,DOC-000134,1101
-2026-06-20,2248058.0,CLP,Cobro cliente - Gastos Administrativos,CC-007,DOC-002930,5102
+2026-06-05,315927.0,USD,Devolucion - Ventas,CC-003,DOC-002120,4101
 2026-05-20,-2132097.0,CLP,Provision mensual - Capital,CC-004,DOC-000831,3101
 2026-07-01,1357240.0,CLP,Anticipo - Proveedores,CC-003,DOC-001800,2101
-2026-07-10,2496565.0,CLP,Nota de debito - Gastos Administrativos,CC-007,DOC-002929,5102
-2026-07-25,1102051.0,CLP,Nota de credito - Clientes,CC-003,DOC-002496,1201
+2026-07-05,2200461.0,CLP,Nota de credito - Ventas,CC-003,DOC-001286,4101
+2026-05-13,155074.0,USD,Anticipo - Bancos,CC-008,COMP-0002-A,1102
 2026-07-18,2191441.0,CLP,Nota de credito - Inventario,CC-008,DOC-001898,1301
 2026-07-11,-1983699.0,CLP,Ajuste contable - Prestamos Bancarios,CC-004,DOC-000864,2201
 2026-06-11,2720047.0,CLP,Regularizacion - Gastos Administrativos,CC-005,DOC-000528,5102
@@ -525,7 +525,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-23,1221068.0,CLP,Provision mensual - Gastos Administrativos,CC-003,DOC-000847,5102
 2026-07-31,1617545.0,CLP,Cobro cliente - Proveedores,CC-007,DOC-000952,2101
 2026-07-10,2438803.0,CLP,Ajuste contable - Caja,CC-008,DOC-001620,1101
-2026-08-07,-200769.0,CLP,Transferencia interna - Impuestos por Pagar,CC-008,DOC-000833,2102
+2026-06-02,-21023.0,CLP,Reverso - Gastos de Venta,CC-001,COMP-0007-B,5103
 2026-06-04,15096.0,USD,Pago de servicios - Gastos Administrativos,CC-007,DOC-002315,5102
 2026-05-24,-1274927.0,CLP,Nomina - Gastos de Venta,CC-005,DOC-001912,5103
 2026-06-02,749721.0,CLP,Anticipo - Costo de Ventas,CC-007,DOC-002593,5101
@@ -549,7 +549,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-16,1718264.0,CLP,Nomina - Ventas,CC-003,DOC-002394,4101
 2026-07-22,-2588900.0,USD,Pago de servicios - Capital,CC-003,DOC-002503,3101
 2026-07-29,-2348201.0,CLP,Provision mensual - Proveedores,CC-003,DOC-000979,2101
-2026-06-03,-2468560.0,CLP,Cobro cliente - Impuestos por Pagar,CC-004,DOC-001847,2102
+,-2468560.0,CLP,Cobro cliente - Impuestos por Pagar,CC-004,DOC-001847,2102
 2026-05-13,-1505405.0,CLP,Compra de mercaderia - Impuestos por Pagar,CC-006,DOC-002370,2102
 2026-06-11,900062.0,CLP,Nota de credito - Costo de Ventas,CC-001,DOC-000498,5101
 2026-04-24,814544.0,CLP,Compra de mercaderia - Bancos,CC-002,DOC-001628,1102
@@ -570,7 +570,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-05-17,2965187.0,CLP,Nota de credito - Inventario,CC-004,DOC-001264,1301
 2026-08-03,1226418.0,CLP,Regularizacion - Costo de Ventas,CC-008,DOC-002407,5101
 2026-06-25,2244947.0,CLP,Ajuste contable - Proveedores,CC-003,DOC-000691,2101
-2026-06-23,837531.0,CLP,Pago de servicios - Inventario,CC-003,DOC-000007,1301
+2026-06-23,,CLP,Pago de servicios - Inventario,CC-003,DOC-000007,1301
 2025-12-20,1702222.0,CLP,Nomina - Caja,CC-002,DOC-002867,1101
 2026-07-22,986403.0,CLP,Ajuste contable - Ventas,CC-008,DOC-001204,4101
 2026-06-09,2637922.0,CLP,Nomina - Bancos,CC-004,DOC-002233,1102
@@ -591,7 +591,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-07-27,-1418163.0,CLP,Cobro cliente - Capital,CC-006,DOC-001860,3101
 2026-05-26,2851361.0,CLP,Nomina - Ventas,CC-003,DOC-002781,4101
 2026-07-28,2902178.0,USD,Nota de debito - Bancos,CC-008,DOC-002863,1102
-2026-06-21,-1737895.0,USD,Transferencia interna - Capital,CC-001,DOC-002587,3101
+2026-06-21,,USD,Transferencia interna - Capital,CC-001,DOC-002587,3101
 2026-07-04,2126223.0,CLP,Pago a proveedor - Proveedores,CC-004,DOC-001399,2101
 2026-06-03,-2435574.0,CLP,Transferencia interna - Prestamos Bancarios,CC-008,DOC-001370,2201
 2026-06-28,-557169.0,CLP,Transferencia interna - Capital,CC-002,DOC-000104,3101
@@ -600,15 +600,15 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-07-18,1428253.0,CLP,Anticipo - Ventas,CC-007,DOC-001756,4101
 2026-07-16,2207280.0,CLP,Nota de credito - Inventario,CC-002,DOC-001323,1301
 2026-07-28,-54605.0,CLP,Regularizacion - Prestamos Bancarios,CC-007,DOC-000642,2201
-2026-06-19,-783122.0,CLP,Pago a proveedor - Capital,CC-003,DOC-000700,3101
+,-783122.0,CLP,Pago a proveedor - Capital,CC-003,DOC-000700,3101
 2026-06-17,-9685.0,CLP,Ajuste contable - Gastos de Venta,CC-002,DOC-000226,5103
 2026-05-01,2266590.0,CLP,Regularizacion - Caja,CC-007,DOC-001697,1101
 2026-06-09,304670.0,CLP,Pago de servicios - Costo de Ventas,CC-008,DOC-001010,5101
 2026-06-16,292647.0,CLP,Regularizacion - Ventas,CC-006,DOC-001572,4101
 2026-06-26,243029.0,CLP,Ajuste contable - Inventario,CC-008,DOC-000776,1301
-,2836742.0,CLP,Nota de credito - Costo de Ventas,CC-003,DOC-001730,5101
+2026-07-20,2836742.0,CLP,Nota de credito - Costo de Ventas,CC-003,DOC-001730,5101
 2026-06-26,1218057.0,CLP,Anticipo - Clientes,CC-006,DOC-002826,1201
-2026-07-09,323958.0,CLP,Provision mensual - Costo de Ventas,CC-004,DOC-002228,5101
+,323958.0,CLP,Provision mensual - Costo de Ventas,CC-004,DOC-002228,5101
 2026-07-06,-414443.0,CLP,Nota de credito - Capital,CC-002,DOC-002794,3101
 2026-06-22,416022.0,CLP,Nota de debito - Caja,CC-004,DOC-000464,1101
 2026-05-17,964893.0,CLP,Cobro cliente - Gastos Administrativos,CC-003,DOC-002651,5102
@@ -619,7 +619,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-08,1423906.0,CLP,Nota de debito - Ventas,CC-001,DOC-001207,4101
 2026-07-29,1525531.0,CLP,Regularizacion - Proveedores,CC-001,DOC-000212,2101
 2026-06-21,2654626.0,CLP,Ajuste contable - Inventario,CC-005,DOC-000012,1301
-2026-06-25,1860042.0,CLP,Nomina - Inventario,CC-008,DOC-002478,1301
+2026-08-05,-2941866.0,CLP,Nota de credito - Capital,CC-005,DOC-000630,3101
 2026-07-15,1555659.0,CLP,Nota de credito - Gastos Administrativos,CC-007,DOC-000422,5102
 2026-07-01,1983536.0,CLP,Nomina - Bancos,CC-003,DOC-001688,1102
 2026-05-25,2422340.0,CLP,Nota de debito - Gastos de Venta,CC-008,DOC-001779,5103
@@ -650,15 +650,15 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-01,1207664.0,CLP,Ajuste contable - Clientes,CC-008,DOC-000736,1201
 2025-12-11,-2301667.0,CLP,Compra de mercaderia - Prestamos Bancarios,CC-003,DOC-001784,2201
 2026-07-11,2560320.0,USD,Regularizacion - Bancos,CC-005,DOC-001608,1102
-2026-06-10,,CLP,Nomina - Gastos Administrativos,CC-005,DOC-000259,5102
+2026-06-10,738409.0,CLP,Nomina - Gastos Administrativos,CC-005,DOC-000259,5102
 2026-06-02,2464428.0,CLP,Nomina - Caja,CC-007,DOC-002771,1101
 2026-07-17,-2603491.0,CLP,Nomina - Capital,CC-003,DOC-002642,3101
 2026-07-05,2689672.0,CLP,Transferencia interna - Costo de Ventas,CC-006,DOC-002742,5101
-2026-06-27,,CLP,Compra de mercaderia - Prestamos Bancarios,CC-002,DOC-002383,2201
+2026-06-27,-406109.0,CLP,Compra de mercaderia - Prestamos Bancarios,CC-002,DOC-002383,2201
 2026-07-11,-1801465.0,CLP,Pago de servicios - Capital,CC-006,DOC-001029,3101
 2026-07-26,1374259.0,CLP,Pago a proveedor - Clientes,CC-008,DOC-002408,1201
 2026-05-15,-2400632.0,CLP,Nota de credito - Impuestos por Pagar,CC-006,DOC-000969,2102
-2026-07-22,1882783.0,CLP,Pago a proveedor - Costo de Ventas,CC-002,DOC-001326,5101
+2026-06-19,246109.0,CLP,Nota de debito - Bancos,CC-008,COMP-0003-A,1102
 2026-06-10,2198661.0,CLP,Nota de debito - Inventario,CC-006,DOC-000819,1301
 2026-05-15,2109578.0,CLP,Pago a proveedor - Gastos Administrativos,CC-007,DOC-002716,5102
 2026-07-06,1625520.0,CLP,Nota de credito - Caja,CC-001,DOC-002325,1101
@@ -755,12 +755,12 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-07-19,1784177.0,CLP,Nomina - Proveedores,CC-002,DOC-001543,2101
 2025-08-08,1696914.0,CLP,Ajuste contable - Ventas,CC-001,DOC-000748,4101
 2026-06-06,2726302.0,CLP,Ajuste contable - Costo de Ventas,CC-005,DOC-002755,5101
-2026-06-13,2789493.0,CLP,Compra de mercaderia - Costo de Ventas,CC-003,DOC-000662,5101
+2026-06-13,,CLP,Compra de mercaderia - Costo de Ventas,CC-003,DOC-000662,5101
 2026-05-13,2846351.0,CLP,Nota de debito - Clientes,CC-001,DOC-000480,1201
 2026-06-17,333475.0,CLP,Provision mensual - Proveedores,CC-008,DOC-002138,2101
 2026-07-17,-1562257.0,USD,Pago de servicios - Gastos de Venta,CC-001,DOC-000871,5103
 2026-06-28,-876071.0,CLP,Nomina - Capital,CC-001,DOC-001453,3101
-2026-06-26,243029.0,CLP,Ajuste contable - Inventario,CC-008,DOC-000776,1301
+2026-07-19,1381692.0,CLP,Devolucion - Ventas,CC-005,DOC-000282,4101
 2026-07-28,-1537196.0,CLP,Compra de mercaderia - Prestamos Bancarios,CC-002,DOC-000549,2201
 2026-08-09,2760915.0,CLP,Pago de servicios - Bancos,CC-002,DOC-002020,1102
 2026-07-09,2673532.0,USD,Regularizacion - Costo de Ventas,CC-004,DOC-002708,5101
@@ -797,7 +797,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-20,1270259.0,CLP,Nomina - Gastos Administrativos,CC-005,DOC-001778,5102
 2026-06-30,419135.0,USD,Regularizacion - Inventario,CC-004,DOC-002517,1301
 2026-07-20,2516295.0,CLP,Cobro cliente - Proveedores,CC-007,DOC-001244,2101
-2025-08-09,-2081832.0,CLP,Ajuste contable - Prestamos Bancarios,CC-003,DOC-000389,2201
+2026-08-03,-266570.0,CLP,Reverso - Clientes,CC-004,COMP-0005-B,1201
 2026-06-19,1663761.0,CLP,Nomina - Caja,CC-005,DOC-002552,1101
 2026-06-15,-1143860.0,CLP,Ajuste contable - Gastos de Venta,CC-004,DOC-000547,5103
 2026-07-23,2691631.0,USD,Compra de mercaderia - Caja,CC-006,DOC-002210,1101
@@ -821,7 +821,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-13,-2676715.0,CLP,Pago de servicios - Capital,CC-008,DOC-000811,3101
 2026-06-17,2685291.0,CLP,Provision mensual - Proveedores,CC-002,DOC-002195,2101
 2026-07-27,-2663344.0,CLP,Cobro cliente - Capital,CC-005,DOC-000561,3101
-2026-06-22,970031.0,CLP,Pago a proveedor - Ventas,CC-008,DOC-002277,4101
+2026-07-25,-1980954.0,CLP,Regularizacion - Ventas,CC-007,DOC-000022,4101
 2026-06-27,-727172.0,CLP,Cobro cliente - Impuestos por Pagar,CC-006,DOC-000229,2102
 2026-06-30,1973455.0,CLP,Devolucion - Bancos,CC-005,DOC-002509,1102
 2026-06-27,1910849.0,CLP,Pago de servicios - Costo de Ventas,CC-001,DOC-001721,5101
@@ -840,7 +840,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-28,2580232.0,CLP,Pago de servicios - Gastos Administrativos,CC-003,DOC-002535,5102
 2026-07-22,925906.0,CLP,Nota de debito - Gastos de Venta,CC-007,DOC-002839,5103
 2026-07-13,886823.0,CLP,Nomina - Bancos,CC-007,DOC-002406,1102
-2026-06-21,448297.0,CLP,Transferencia interna - Inventario,CC-001,DOC-000750,1301
+2026-07-15,1348252.0,USD,Compra de mercaderia - Ventas,CC-004,DOC-002085,4101
 2026-07-26,-1356618.0,CLP,Regularizacion - Ventas,CC-004,DOC-002581,4101
 2026-06-06,-1168317.0,CLP,Compra de mercaderia - Proveedores,CC-006,DOC-002092,2101
 2026-07-25,-2695354.0,CLP,Nota de debito - Capital,CC-005,DOC-000940,3101
@@ -862,12 +862,12 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-05-27,-2023844.0,CLP,Provision mensual - Impuestos por Pagar,CC-002,DOC-002723,2102
 2026-06-06,229769.0,CLP,Compra de mercaderia - Clientes,CC-004,DOC-000553,1201
 2025-11-14,1815298.0,CLP,Cobro cliente - Clientes,CC-007,DOC-000834,1201
-2026-05-21,1420261.0,CLP,Nomina - Proveedores,CC-003,DOC-000962,2101
+,1420261.0,CLP,Nomina - Proveedores,CC-003,DOC-000962,2101
 2026-07-01,1578558.0,USD,Regularizacion - Bancos,CC-002,DOC-000596,1102
 2026-05-15,809210.0,CLP,Compra de mercaderia - Ventas,CC-001,DOC-002451,4101
 2026-05-22,1589195.0,CLP,Nota de credito - Costo de Ventas,CC-005,DOC-000802,5101
 2026-06-07,547794.0,CLP,Nota de debito - Ventas,CC-001,DOC-002136,4101
-2026-08-02,699288.0,CLP,Devolucion - Proveedores,CC-003,DOC-002194,2101
+2026-07-02,-408158.0,CLP,Reverso - Prestamos Bancarios,CC-003,COMP-0000-B,2201
 2025-10-10,2279842.0,CLP,Pago a proveedor - Caja,CC-002,DOC-002719,1101
 2026-08-04,542136.0,CLP,Pago a proveedor - Bancos,CC-007,DOC-000440,1102
 2026-07-07,2691609.0,CLP,Nota de debito - Caja,CC-005,DOC-000508,1101
@@ -886,7 +886,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-08-05,-2941866.0,CLP,Nota de credito - Capital,CC-005,DOC-000630,3101
 2026-07-08,2824830.0,CLP,Nota de debito - Inventario,CC-003,DOC-002541,1301
 2026-07-25,806434.0,CLP,Cobro cliente - Bancos,CC-006,DOC-001507,1102
-2026-07-11,459350.0,CLP,Provision mensual - Ventas,CC-003,DOC-002176,4101
+2025-10-17,1252054.0,CLP,Provision mensual - Ventas,CC-003,DOC-001743,4101
 2026-07-11,-1043696.0,CLP,Devolucion - Impuestos por Pagar,CC-002,DOC-000482,2102
 2026-07-13,1775298.0,CLP,Cobro cliente - Inventario,CC-008,DOC-001927,1301
 2026-08-09,2154289.0,CLP,Cobro cliente - Caja,CC-002,DOC-001113,1101
@@ -919,7 +919,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-01-01,967047.0,CLP,Nomina - Inventario,CC-006,DOC-002602,1301
 2026-06-18,453403.0,CLP,Nota de credito - Caja,CC-003,DOC-001436,1101
 2026-05-27,664551.0,CLP,Devolucion - Costo de Ventas,CC-001,DOC-000025,5101
-2026-06-06,2539667.0,USD,Anticipo - Ventas,CC-004,DOC-001869,4101
+2026-05-20,2431457.0,CLP,Compra de mercaderia - Gastos de Venta,CC-006,DOC-001885,5103
 2026-07-21,-822010.0,CLP,Nomina - Proveedores,CC-002,DOC-000219,2101
 2026-08-04,-1655925.0,CLP,Regularizacion - Capital,CC-003,DOC-002818,3101
 2026-06-18,-1753188.0,CLP,Nota de credito - Impuestos por Pagar,CC-001,DOC-000276,2102
@@ -938,7 +938,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-05,747676.0,CLP,Nota de credito - Caja,CC-003,DOC-001835,1101
 2026-07-20,-1305046.0,CLP,Pago a proveedor - Impuestos por Pagar,CC-003,DOC-001114,2102
 2026-08-02,-2282511.0,CLP,Cobro cliente - Capital,CC-008,DOC-001846,3101
-2026-07-15,2544969.0,USD,Provision mensual - Clientes,CC-001,DOC-001317,1201
+2026-07-15,2544969.0,USD,Provision mensual - Clientes,CC-001,DOC-001317,
 2026-06-07,2446780.0,CLP,Nota de debito - Bancos,CC-007,DOC-002629,1102
 2026-07-04,1705505.0,CLP,Ajuste contable - Caja,CC-007,DOC-000297,1101
 2025-09-18,-951199.0,CLP,Compra de mercaderia - Prestamos Bancarios,CC-004,DOC-001313,2201
@@ -973,7 +973,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-15,-2687862.0,CLP,Ajuste contable - Impuestos por Pagar,CC-006,DOC-001940,2102
 2026-06-17,2896157.0,CLP,Pago a proveedor - Gastos Administrativos,CC-004,DOC-000538,5102
 2025-11-04,514518.0,CLP,Pago a proveedor - Clientes,CC-007,DOC-001048,1201
-,-552694.0,USD,Compra de mercaderia - Gastos de Venta,CC-007,DOC-000557,5103
+2026-06-06,55578.0,CLP,Anticipo - Clientes,CC-005,DOC-002824,1201
 2026-07-26,1635412.0,CLP,Anticipo - Ventas,CC-002,DOC-002375,4101
 2026-06-12,2140106.0,CLP,Ajuste contable - Proveedores,CC-007,DOC-002209,2101
 2026-06-23,2318811.0,CLP,Cobro cliente - Inventario,CC-002,DOC-002338,1301
@@ -995,7 +995,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-07-29,1090784.0,CLP,Pago de servicios - Ventas,CC-006,DOC-002286,4101
 2026-05-31,124069.0,CLP,Compra de mercaderia - Costo de Ventas,CC-003,DOC-002147,5101
 2026-06-14,988397.0,CLP,Nota de credito - Inventario,CC-003,DOC-000618,1301
-2026-05-21,,CLP,Regularizacion - Gastos de Venta,CC-007,DOC-000406,5103
+2026-05-21,-1994111.0,CLP,Regularizacion - Gastos de Venta,CC-007,DOC-000406,5103
 2026-07-05,141227.0,CLP,Anticipo - Costo de Ventas,CC-002,DOC-001157,5101
 2025-09-18,2492944.0,CLP,Transferencia interna - Clientes,CC-005,DOC-001068,1201
 2026-07-03,885474.0,CLP,Nota de debito - Proveedores,CC-007,DOC-001133,2101
@@ -1020,7 +1020,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-27,2791763.0,CLP,Nomina - Inventario,CC-006,DOC-000220,1301
 2026-07-24,2525069.0,CLP,Regularizacion - Proveedores,CC-004,DOC-001626,2101
 2026-05-28,1310365.0,USD,Nota de debito - Caja,CC-006,DOC-001188,1101
-2026-07-23,2300120.0,CLP,Nota de debito - Bancos,CC-002,DOC-001455,1102
+2026-07-23,2300120.0,CLP,Nota de debito - Bancos,CC-002,DOC-001455,
 2026-08-03,1307774.0,USD,Provision mensual - Bancos,CC-005,DOC-000449,1102
 2026-06-30,1114265.0,CLP,Cobro cliente - Costo de Ventas,CC-004,DOC-002002,5101
 2026-07-10,1235315.0,CLP,Ajuste contable - Inventario,CC-002,DOC-002616,1301
@@ -1037,14 +1037,14 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-09,2205771.0,CLP,Transferencia interna - Gastos de Venta,CC-005,DOC-001554,5103
 2026-05-13,2636519.0,CLP,Nomina - Bancos,CC-002,DOC-000604,1102
 2026-07-17,-1542701.0,USD,Pago a proveedor - Impuestos por Pagar,CC-008,DOC-002032,2102
-2025-11-17,-663461.0,CLP,Ajuste contable - Prestamos Bancarios,CC-003,DOC-000916,
+2025-11-17,-663461.0,CLP,Ajuste contable - Prestamos Bancarios,CC-003,DOC-000916,2201
 2026-08-09,-2793301.0,CLP,Ajuste contable - Capital,CC-007,DOC-002632,3101
 2026-06-15,841130.0,CLP,Provision mensual - Clientes,CC-001,DOC-002337,1201
 2026-07-15,1501280.0,CLP,Nota de credito - Clientes,CC-006,DOC-002098,1201
 2026-07-15,2047736.0,CLP,Nomina - Caja,CC-008,DOC-002437,1101
 2026-06-13,1165827.0,CLP,Cobro cliente - Inventario,CC-001,DOC-000821,1301
 2026-06-10,-537806.0,CLP,Anticipo - Ventas,CC-003,DOC-002469,4101
-2026-07-26,1153971.0,CLP,Nomina - Caja,CC-008,DOC-001000,1101
+2026-07-26,,CLP,Nomina - Caja,CC-008,DOC-001000,1101
 2026-07-16,-303539.0,CLP,Nomina - Proveedores,CC-005,DOC-001703,2101
 2026-06-07,-2738320.0,CLP,Devolucion - Ventas,CC-004,DOC-000018,4101
 2025-07-21,1523376.0,CLP,Pago a proveedor - Clientes,CC-008,DOC-001777,1201
@@ -1106,7 +1106,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-03,193331.0,USD,Pago de servicios - Clientes,CC-006,DOC-002807,1201
 2026-07-07,-2142523.0,CLP,Regularizacion - Gastos de Venta,CC-006,DOC-002335,5103
 2026-05-22,2205685.0,CLP,Devolucion - Gastos Administrativos,CC-004,DOC-002762,5102
-2026-07-26,-2919482.0,CLP,Devolucion - Gastos de Venta,CC-006,DOC-000005,5103
+2026-05-17,2002602.0,CLP,Pago a proveedor - Ventas,CC-004,DOC-002363,4101
 2026-05-23,1318396.0,CLP,Transferencia interna - Bancos,CC-002,DOC-001179,1102
 2026-03-01,2680407.0,CLP,Nomina - Inventario,CC-002,DOC-001602,1301
 2026-07-30,-1808445.0,CLP,Pago de servicios - Impuestos por Pagar,CC-006,DOC-002116,2102
@@ -1174,7 +1174,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-19,2258624.0,USD,Cobro cliente - Costo de Ventas,CC-002,DOC-001283,5101
 2026-06-14,720745.0,CLP,Pago a proveedor - Caja,CC-002,DOC-002262,1101
 2026-07-31,1406837.0,CLP,Pago de servicios - Inventario,CC-007,DOC-000731,1301
-2026-05-18,-5256.0,CLP,Regularizacion - Prestamos Bancarios,CC-005,DOC-001337,2201
+2026-05-18,-5256.0,CLP,Regularizacion - Prestamos Bancarios,CC-005,DOC-001337,
 2026-05-25,-1895726.0,CLP,Ajuste contable - Capital,CC-006,DOC-001598,3101
 2026-06-03,1701756.0,CLP,Pago a proveedor - Costo de Ventas,CC-008,DOC-002840,5101
 2026-05-14,607447.0,CLP,Devolucion - Inventario,CC-006,DOC-000023,1301
@@ -1183,12 +1183,12 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-08-09,2225580.0,USD,Nota de credito - Proveedores,CC-003,DOC-000861,2101
 2026-06-11,-2078613.0,CLP,Regularizacion - Gastos de Venta,CC-008,DOC-000902,5103
 2026-07-09,-1133642.0,CLP,Cobro cliente - Capital,CC-007,DOC-002655,3101
-2026-08-03,-661924.0,CLP,Nota de credito - Gastos de Venta,CC-003,DOC-002937,5103
+2026-06-11,-1970264.0,CLP,Pago de servicios - Gastos de Venta,CC-002,DOC-002248,5103
 2025-10-14,76611.0,CLP,Devolucion - Clientes,CC-001,DOC-000444,1201
-2026-05-09,-1046767.0,CLP,Pago de servicios - Gastos de Venta,CC-004,DOC-002938,5103
+2026-07-20,2020593.0,CLP,Pago a proveedor - Inventario,CC-002,DOC-001798,1301
 2026-06-25,1048182.0,CLP,Anticipo - Gastos Administrativos,CC-001,DOC-000754,5102
 2026-07-11,1944682.0,CLP,Transferencia interna - Clientes,CC-005,DOC-000923,1201
-2026-05-22,216742.0,CLP,Pago a proveedor - Gastos de Venta,CC-005,DOC-000926,5103
+2026-07-13,194015.0,CLP,Pago de servicios - Costo de Ventas,CC-007,DOC-000896,5101
 2026-07-21,-296212.0,CLP,Devolucion - Prestamos Bancarios,CC-004,DOC-002102,2201
 2026-07-18,2308071.0,CLP,Nota de credito - Caja,CC-007,DOC-000311,1101
 2026-08-09,-906844.0,CLP,Compra de mercaderia - Gastos de Venta,CC-003,DOC-000548,5103
@@ -1223,7 +1223,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2025-11-19,1267110.0,CLP,Nota de debito - Gastos Administrativos,CC-001,DOC-001610,5102
 2026-05-21,1973637.0,CLP,Nota de credito - Gastos Administrativos,CC-004,DOC-000382,5102
 2026-07-11,1368458.0,CLP,Nota de credito - Caja,CC-005,DOC-002106,1101
-2026-06-14,2140644.0,CLP,Anticipo - Gastos Administrativos,CC-006,DOC-002187,5102
+,2140644.0,CLP,Anticipo - Gastos Administrativos,CC-006,DOC-002187,5102
 2025-12-02,1052254.0,CLP,Provision mensual - Clientes,CC-005,DOC-001621,1201
 2026-04-12,-1528610.0,CLP,Nomina - Prestamos Bancarios,CC-004,DOC-002831,2201
 2026-08-09,-2016541.0,USD,Anticipo - Impuestos por Pagar,CC-008,DOC-000552,2102
@@ -1242,7 +1242,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-12,-1832235.0,CLP,Pago de servicios - Gastos de Venta,CC-001,DOC-002371,5103
 2026-06-05,-1046504.0,CLP,Nota de credito - Impuestos por Pagar,CC-007,DOC-002865,2102
 2026-06-02,2327610.0,CLP,Pago de servicios - Proveedores,CC-005,DOC-001189,2101
-2026-05-20,348647.0,CLP,Nomina - Inventario,CC-008,DOC-002828,1301
+2026-07-23,-1393419.0,CLP,Regularizacion - Gastos de Venta,CC-002,DOC-000785,5103
 2026-05-26,-1922091.0,CLP,Provision mensual - Impuestos por Pagar,CC-007,DOC-002600,2102
 2026-07-12,-1710180.0,CLP,Ajuste contable - Capital,CC-004,DOC-001657,3101
 2026-08-05,-2668822.0,CLP,Anticipo - Capital,CC-005,DOC-000115,3101
@@ -1250,7 +1250,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-05-25,-1152222.0,CLP,Pago de servicios - Impuestos por Pagar,CC-006,DOC-001511,2102
 2026-06-10,106199.0,CLP,Devolucion - Caja,CC-007,DOC-002492,1101
 2026-08-03,1361152.0,CLP,Transferencia interna - Proveedores,CC-004,DOC-002797,2101
-2026-07-02,-562994.0,CLP,Provision mensual - Gastos de Venta,CC-002,DOC-002809,5103
+2026-08-09,-1811864.0,CLP,Pago a proveedor - Gastos de Venta,CC-001,DOC-001411,5103
 2026-07-11,-320768.0,CLP,Nota de credito - Impuestos por Pagar,CC-007,DOC-001596,2102
 2026-07-06,-1927056.0,CLP,Ajuste contable - Gastos de Venta,CC-004,DOC-002889,5103
 2026-06-08,1843412.0,CLP,Regularizacion - Gastos Administrativos,CC-001,DOC-000672,5102
@@ -1275,14 +1275,14 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-07,-1283089.0,USD,Transferencia interna - Capital,CC-003,DOC-000071,3101
 2026-07-31,-1016629.0,CLP,Compra de mercaderia - Prestamos Bancarios,CC-007,DOC-001789,2201
 2026-05-14,2026931.0,CLP,Ajuste contable - Gastos de Venta,CC-001,DOC-001087,5103
-2026-05-30,2228842.0,CLP,Regularizacion - Clientes,CC-002,DOC-000394,1201
+2026-05-30,,CLP,Regularizacion - Clientes,CC-002,DOC-000394,1201
 2026-05-21,970532.0,CLP,Transferencia interna - Ventas,CC-007,DOC-000583,4101
 2026-06-23,-1652631.0,CLP,Devolucion - Impuestos por Pagar,CC-006,DOC-002080,2102
 2026-07-17,2840606.0,CLP,Anticipo - Ventas,CC-003,DOC-001980,4101
 2026-07-20,2916634.0,CLP,Ajuste contable - Clientes,CC-001,DOC-000500,1201
 2026-05-19,-1359698.0,USD,Nota de debito - Capital,CC-007,DOC-002014,3101
 2026-06-13,2436011.0,CLP,Nota de credito - Bancos,CC-006,DOC-002223,1102
-2026-07-14,-2969378.0,CLP,Nota de debito - Gastos de Venta,CC-004,DOC-000396,5103
+2026-06-09,465002.0,CLP,Nomina - Costo de Ventas,CC-002,DOC-000491,5101
 2026-06-02,1669579.0,CLP,Compra de mercaderia - Gastos Administrativos,CC-004,DOC-002740,5102
 2026-05-23,592825.0,CLP,Pago a proveedor - Bancos,CC-006,DOC-002318,1102
 2026-08-09,701655.0,CLP,Compra de mercaderia - Ventas,CC-004,DOC-001259,4101
@@ -1302,15 +1302,15 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-23,-394947.0,CLP,Compra de mercaderia - Proveedores,CC-004,DOC-001050,2101
 2026-06-15,2490801.0,USD,Nota de credito - Inventario,CC-006,DOC-000590,1301
 2026-05-20,-523736.0,CLP,Provision mensual - Capital,CC-005,DOC-000519,3101
-2026-07-20,2020593.0,CLP,Pago a proveedor - Inventario,CC-002,DOC-001798,1301
+2026-07-29,-2686501.0,CLP,Nomina - Ventas,CC-002,DOC-002289,4101
 2026-05-19,-2044762.0,CLP,Nota de credito - Prestamos Bancarios,CC-007,DOC-000429,2201
 2026-05-17,1352594.0,CLP,Pago de servicios - Costo de Ventas,CC-003,DOC-001083,5101
 2026-05-18,2893408.0,CLP,Cobro cliente - Proveedores,CC-003,DOC-000207,2101
 2026-06-09,465002.0,CLP,Nomina - Costo de Ventas,CC-002,DOC-000491,5101
 2026-06-02,-2094066.0,CLP,Transferencia interna - Prestamos Bancarios,CC-005,DOC-001609,2201
 2026-08-01,-1838172.0,CLP,Devolucion - Ventas,CC-008,DOC-002912,4101
-2026-06-14,-869898.0,CLP,Provision mensual - Gastos de Venta,CC-001,DOC-000792,5103
-2026-05-24,-1594111.0,CLP,Pago a proveedor - Impuestos por Pagar,CC-002,DOC-002019,
+2026-06-14,,CLP,Provision mensual - Gastos de Venta,CC-001,DOC-000792,5103
+2026-05-24,-1594111.0,CLP,Pago a proveedor - Impuestos por Pagar,CC-002,DOC-002019,2102
 2026-07-17,2713588.0,CLP,Regularizacion - Costo de Ventas,CC-005,DOC-001186,5101
 2026-05-27,-581482.0,CLP,Anticipo - Capital,CC-002,DOC-001185,3101
 2026-07-22,-2218797.0,CLP,Nomina - Gastos de Venta,CC-001,DOC-002181,5103
@@ -1320,7 +1320,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-04,-1518123.0,CLP,Nota de credito - Proveedores,CC-002,DOC-002369,2101
 2026-07-10,682466.0,CLP,Transferencia interna - Costo de Ventas,CC-005,DOC-002226,5101
 2026-08-08,340044.0,CLP,Nota de debito - Costo de Ventas,CC-005,DOC-000020,5101
-2026-06-06,564646.0,CLP,Cobro cliente - Inventario,CC-005,DOC-001378,1301
+,564646.0,CLP,Cobro cliente - Inventario,CC-005,DOC-001378,1301
 2026-07-30,-585557.0,USD,Devolucion - Impuestos por Pagar,CC-002,DOC-001558,2102
 2026-07-29,-2742943.0,CLP,Nomina - Impuestos por Pagar,CC-006,DOC-001938,2102
 2026-08-10,2434554.0,CLP,Ajuste contable - Caja,CC-007,DOC-002837,1101
@@ -1332,7 +1332,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-05-13,910060.0,CLP,Ajuste contable - Gastos Administrativos,CC-001,DOC-000156,5102
 2026-08-02,2928531.0,CLP,Devolucion - Costo de Ventas,CC-008,DOC-002276,5101
 2026-06-28,-245968.0,CLP,Nota de debito - Impuestos por Pagar,CC-005,DOC-000886,2102
-2026-02-19,1748211.0,USD,Provision mensual - Costo de Ventas,CC-002,DOC-002770,5101
+2026-07-21,21023.0,CLP,Provision mensual - Gastos de Venta,CC-001,COMP-0007-A,5103
 2026-05-19,458451.0,CLP,Transferencia interna - Ventas,CC-003,DOC-001591,4101
 2026-06-25,1860042.0,CLP,Nomina - Inventario,CC-008,DOC-002478,1301
 2026-07-12,948805.0,CLP,Cobro cliente - Gastos de Venta,CC-003,DOC-002717,5103
@@ -1352,7 +1352,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-05-20,332541.0,CLP,Nota de credito - Caja,CC-004,DOC-000380,1101
 2026-06-13,-2783795.0,CLP,Nota de credito - Capital,CC-006,DOC-000947,3101
 2026-07-31,2764085.0,CLP,Ajuste contable - Ventas,CC-001,DOC-001712,4101
-2026-07-02,-2599367.0,CLP,Regularizacion - Impuestos por Pagar,CC-003,DOC-002756,
+2026-07-02,-2599367.0,CLP,Regularizacion - Impuestos por Pagar,CC-003,DOC-002756,2102
 2026-07-16,-1084478.0,CLP,Devolucion - Capital,CC-004,DOC-000715,3101
 2026-06-18,-2681765.0,CLP,Ajuste contable - Prestamos Bancarios,CC-005,DOC-001913,2201
 2026-05-25,-600880.0,CLP,Devolucion - Impuestos por Pagar,CC-003,DOC-000686,2102
@@ -1362,7 +1362,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-05-20,-2376028.0,CLP,Nota de credito - Proveedores,CC-002,DOC-000209,2101
 2026-06-22,-1393234.0,CLP,Ajuste contable - Gastos de Venta,CC-004,DOC-002011,5103
 2026-07-09,-2971327.0,CLP,Cobro cliente - Prestamos Bancarios,CC-003,DOC-002221,2201
-2026-07-26,-2959878.0,CLP,Nota de debito - Ventas,CC-004,DOC-000905,4101
+2026-07-06,-1354933.0,CLP,Anticipo - Impuestos por Pagar,CC-004,DOC-000680,2102
 2026-05-23,-1542825.0,CLP,Provision mensual - Prestamos Bancarios,CC-002,DOC-001537,2201
 2026-06-26,1003652.0,CLP,Pago a proveedor - Bancos,CC-002,DOC-000885,1102
 2026-05-27,1128182.0,CLP,Compra de mercaderia - Proveedores,CC-006,DOC-001859,2101
@@ -1384,12 +1384,12 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-05-23,-1801854.0,CLP,Pago de servicios - Capital,CC-008,DOC-000571,3101
 2026-06-08,839162.0,CLP,Anticipo - Inventario,CC-005,DOC-000993,1301
 2026-07-26,2799710.0,USD,Compra de mercaderia - Proveedores,CC-004,DOC-002795,2101
-2026-07-13,-514723.0,USD,Pago de servicios - Gastos de Venta,CC-001,DOC-001527,5103
+2026-08-09,2676559.0,CLP,Pago a proveedor - Gastos de Venta,CC-001,DOC-000539,5103
 2026-06-23,440254.0,CLP,Nota de debito - Ventas,CC-003,DOC-000585,4101
 2026-08-07,-2218008.0,CLP,Devolucion - Ventas,CC-005,DOC-002328,4101
-2026-06-05,1571694.0,CLP,Cobro cliente - Gastos Administrativos,CC-007,DOC-000563,5102
+2026-05-19,-305150.0,CLP,Reverso - Costo de Ventas,CC-005,COMP-0004-B,5101
 2026-05-13,1718613.0,CLP,Compra de mercaderia - Bancos,CC-002,DOC-001349,1102
-2026-05-22,,CLP,Cobro cliente - Inventario,CC-003,DOC-002900,1301
+2026-05-22,566941.0,CLP,Cobro cliente - Inventario,CC-003,DOC-002900,1301
 2026-06-06,-844399.0,CLP,Anticipo - Capital,CC-003,DOC-000674,3101
 2026-05-14,-1661868.0,CLP,Nota de credito - Capital,CC-007,DOC-002590,3101
 2026-06-05,-2670297.0,CLP,Transferencia interna - Capital,CC-002,DOC-000855,3101
@@ -1409,12 +1409,12 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-27,2626829.0,CLP,Transferencia interna - Costo de Ventas,CC-006,DOC-001422,5101
 2026-06-26,-941968.0,CLP,Regularizacion - Gastos de Venta,CC-005,DOC-002349,5103
 2026-06-08,-1274377.0,CLP,Nomina - Prestamos Bancarios,CC-006,DOC-001426,2201
-2026-06-29,448762.0,CLP,Provision mensual - Bancos,CC-008,DOC-002252,1102
+,448762.0,CLP,Provision mensual - Bancos,CC-008,DOC-002252,1102
 2026-07-19,-2289364.0,USD,Nota de debito - Impuestos por Pagar,CC-002,DOC-000425,2102
 2026-02-23,-416409.0,CLP,Nomina - Prestamos Bancarios,CC-008,DOC-000534,2201
 2026-08-01,-290362.0,CLP,Provision mensual - Gastos de Venta,CC-008,DOC-001054,5103
 2026-07-18,-967195.0,CLP,Provision mensual - Gastos de Venta,CC-005,DOC-001864,5103
-2026-05-17,2226995.0,CLP,Devolucion - Costo de Ventas,CC-004,DOC-002504,5101
+,2226995.0,CLP,Devolucion - Costo de Ventas,CC-004,DOC-002504,5101
 2026-07-06,438280.0,CLP,Ajuste contable - Bancos,CC-003,DOC-001425,1102
 2026-05-19,-2942550.0,CLP,Pago a proveedor - Prestamos Bancarios,CC-003,DOC-000132,2201
 2026-07-17,-2201345.0,USD,Ajuste contable - Ventas,CC-005,DOC-001837,4101
@@ -1422,7 +1422,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-05-26,2164933.0,CLP,Nota de credito - Inventario,CC-001,DOC-000421,1301
 2026-07-21,2831386.0,CLP,Ajuste contable - Caja,CC-001,DOC-002658,1101
 2026-05-17,1702515.0,CLP,Cobro cliente - Caja,CC-006,DOC-002028,1101
-2026-05-26,-1574732.0,CLP,Devolucion - Capital,CC-003,DOC-000542,3101
+2026-07-27,-155074.0,USD,Reverso - Bancos,CC-008,COMP-0002-B,1102
 2026-06-06,2696037.0,CLP,Transferencia interna - Inventario,CC-001,DOC-001368,1301
 2026-05-18,1943360.0,CLP,Transferencia interna - Caja,CC-005,DOC-000556,1101
 2026-07-26,173218.0,CLP,Nota de credito - Gastos Administrativos,CC-002,DOC-002043,5102
@@ -1446,7 +1446,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-07-08,2925971.0,CLP,Pago de servicios - Caja,CC-001,DOC-001644,1101
 2026-05-06,2341242.0,CLP,Nota de credito - Caja,CC-001,DOC-002346,1101
 2025-08-06,-2781865.0,CLP,Provision mensual - Prestamos Bancarios,CC-003,DOC-002431,2201
-2026-06-10,-2152539.0,USD,Transferencia interna - Impuestos por Pagar,CC-006,DOC-002168,2102
+2026-06-10,,USD,Transferencia interna - Impuestos por Pagar,CC-006,DOC-002168,2102
 2026-06-13,2286228.0,CLP,Ajuste contable - Clientes,CC-006,DOC-001137,1201
 2025-11-18,-962330.0,CLP,Nota de credito - Ventas,CC-008,DOC-001797,4101
 2026-01-04,2877120.0,CLP,Pago a proveedor - Gastos Administrativos,CC-001,DOC-001544,5102
@@ -1489,7 +1489,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-07-22,2656814.0,CLP,Transferencia interna - Costo de Ventas,CC-007,DOC-000159,5101
 2026-08-02,1598735.0,CLP,Anticipo - Costo de Ventas,CC-007,DOC-001545,5101
 2026-05-22,2838120.0,CLP,Nomina - Costo de Ventas,CC-001,DOC-001933,5101
-2026-07-19,2304693.0,CLP,Pago de servicios - Inventario,CC-001,DOC-001771,1301
+2026-08-08,1224972.0,CLP,Nota de debito - Caja,CC-002,DOC-002258,1101
 2026-06-07,-931308.0,CLP,Compra de mercaderia - Gastos de Venta,CC-003,DOC-000061,5103
 2026-05-17,381020.0,CLP,Ajuste contable - Proveedores,CC-008,DOC-000849,2101
 2026-08-05,2038957.0,USD,Transferencia interna - Gastos Administrativos,CC-006,DOC-002129,5102
@@ -1504,15 +1504,15 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-07-05,2603088.0,CLP,Nomina - Costo de Ventas,CC-005,DOC-000505,5101
 2026-06-09,-1188980.0,CLP,Regularizacion - Capital,CC-004,DOC-000752,3101
 2026-07-31,-1473944.0,CLP,Pago de servicios - Prestamos Bancarios,CC-008,DOC-001978,2201
-2026-06-17,883887.0,CLP,Pago a proveedor - Inventario,CC-005,DOC-002282,1301
+2026-07-22,-2218797.0,CLP,Nomina - Gastos de Venta,CC-001,DOC-002181,5103
 2026-05-25,-2724041.0,CLP,Regularizacion - Impuestos por Pagar,CC-003,DOC-002410,2102
 2026-06-22,854425.0,CLP,Provision mensual - Inventario,CC-002,DOC-001517,1301
-2026-07-06,-347809.0,CLP,Cobro cliente - Proveedores,CC-004,DOC-000825,2101
+2026-07-20,-440088.0,CLP,Reverso - Inventario,CC-007,COMP-0006-B,1301
 2026-03-28,-2976408.0,CLP,Regularizacion - Gastos de Venta,CC-004,DOC-002273,5103
 2026-07-15,1755060.0,CLP,Cobro cliente - Inventario,CC-003,DOC-001389,1301
 2026-07-17,-161060.0,USD,Provision mensual - Capital,CC-003,DOC-001266,3101
 2026-05-21,2855161.0,CLP,Nota de credito - Clientes,CC-005,DOC-002466,1201
-2026-06-02,-1501947.0,CLP,Transferencia interna - Ventas,CC-008,DOC-001711,4101
+2026-06-02,-1501947.0,CLP,Transferencia interna - Ventas,CC-008,DOC-001711,
 2025-08-16,2729140.0,CLP,Nota de debito - Clientes,CC-003,DOC-000771,1201
 2026-05-15,1953208.0,CLP,Transferencia interna - Proveedores,CC-004,DOC-002802,2101
 2026-08-10,1600334.0,CLP,Transferencia interna - Clientes,CC-003,DOC-001807,1201
@@ -1549,7 +1549,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-07-11,1706199.0,CLP,Cobro cliente - Clientes,CC-008,DOC-002657,1201
 2026-04-03,2835838.0,CLP,Nomina - Ventas,CC-003,DOC-000339,4101
 2026-07-12,2906812.0,CLP,Compra de mercaderia - Caja,CC-004,DOC-002539,1101
-2026-06-19,1766442.0,CLP,Anticipo - Clientes,CC-005,DOC-002935,1201
+2026-07-17,300767.0,CLP,Nomina - Inventario,CC-008,DOC-000729,1301
 2026-06-20,558912.0,CLP,Devolucion - Clientes,CC-008,DOC-000925,1201
 2026-06-08,2987928.0,CLP,Compra de mercaderia - Inventario,CC-008,DOC-000265,1301
 2026-06-12,-2318165.0,CLP,Regularizacion - Capital,CC-003,DOC-000376,3101
@@ -1557,8 +1557,8 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-12,2009106.0,CLP,Transferencia interna - Bancos,CC-008,DOC-001463,1102
 2026-06-21,1122729.0,USD,Regularizacion - Clientes,CC-006,DOC-000271,1201
 2026-06-04,2516361.0,CLP,Devolucion - Gastos Administrativos,CC-006,DOC-000696,5102
-2026-07-05,1261684.0,CLP,Provision mensual - Inventario,CC-007,DOC-001687,1301
-2026-05-31,-357694.0,CLP,Nota de credito - Capital,CC-008,DOC-000244,3101
+2026-07-16,2700118.0,CLP,Pago a proveedor - Gastos Administrativos,CC-003,DOC-001660,5102
+2026-05-31,,CLP,Nota de credito - Capital,CC-008,DOC-000244,3101
 2026-07-19,2719920.0,CLP,Anticipo - Ventas,CC-008,DOC-002813,4101
 2026-08-01,-1123904.0,CLP,Cobro cliente - Ventas,CC-006,DOC-000476,4101
 2026-08-06,2427706.0,CLP,Pago de servicios - Proveedores,CC-008,DOC-002785,2101
@@ -1566,8 +1566,8 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-20,1774258.0,CLP,Nota de credito - Caja,CC-003,DOC-002298,1101
 2026-06-02,2966676.0,USD,Devolucion - Caja,CC-005,DOC-002448,1101
 2026-05-31,1019812.0,CLP,Compra de mercaderia - Proveedores,CC-008,DOC-002783,2101
-2026-07-14,-507511.0,CLP,Pago a proveedor - Gastos de Venta,CC-003,DOC-002659,5103
-2026-06-14,-326669.0,CLP,Cobro cliente - Gastos de Venta,CC-006,DOC-002554,5103
+2026-07-21,-2732408.0,CLP,Nota de credito - Gastos de Venta,CC-004,DOC-001696,5103
+2026-05-26,1817219.0,CLP,Pago a proveedor - Gastos Administrativos,CC-004,DOC-002074,5102
 2026-05-25,984628.0,USD,Regularizacion - Proveedores,CC-008,DOC-002159,2101
 2026-07-30,201916.0,CLP,Transferencia interna - Ventas,CC-007,DOC-000250,4101
 2026-05-12,-290075.0,CLP,Cobro cliente - Prestamos Bancarios,CC-003,DOC-000413,2201
@@ -1579,8 +1579,8 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-08-01,-115449.0,CLP,Transferencia interna - Gastos de Venta,CC-001,DOC-000893,5103
 2026-06-11,-102659.0,CLP,Cobro cliente - Gastos de Venta,CC-007,DOC-001131,5103
 2026-07-29,997298.0,CLP,Regularizacion - Clientes,CC-002,DOC-001449,1201
-2026-07-21,-69285.0,CLP,Cobro cliente - Ventas,CC-007,DOC-002907,4101
-2026-05-15,1269369.0,CLP,Nomina - Clientes,CC-008,DOC-000015,1201
+2026-07-21,-69285.0,CLP,Cobro cliente - Ventas,CC-007,DOC-002907,
+2026-05-15,,CLP,Nomina - Clientes,CC-008,DOC-000015,1201
 2026-05-13,-744452.0,CLP,Ajuste contable - Impuestos por Pagar,CC-002,DOC-001950,2102
 2026-08-08,-2069304.0,CLP,Ajuste contable - Capital,CC-005,DOC-000721,3101
 2026-06-25,2770342.0,USD,Pago a proveedor - Costo de Ventas,CC-003,DOC-001420,5101
@@ -1645,8 +1645,8 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-02,2385565.0,USD,Nota de debito - Gastos Administrativos,CC-006,DOC-000465,5102
 2026-06-27,2664545.0,CLP,Compra de mercaderia - Proveedores,CC-005,DOC-001560,2101
 2026-05-30,-2357147.0,USD,Ajuste contable - Impuestos por Pagar,CC-006,DOC-001223,2102
-2026-05-27,1311372.0,USD,Ajuste contable - Costo de Ventas,CC-001,DOC-001953,
-2026-05-14,2026931.0,CLP,Ajuste contable - Gastos de Venta,CC-001,DOC-001087,5103
+2026-05-27,1311372.0,USD,Ajuste contable - Costo de Ventas,CC-001,DOC-001953,5101
+2026-01-30,-2999277.0,CLP,Anticipo - Ventas,CC-007,DOC-002560,4101
 2026-07-29,1319742.0,CLP,Pago a proveedor - Gastos de Venta,CC-001,DOC-002348,5103
 2026-07-04,1403796.0,CLP,Nomina - Gastos de Venta,CC-004,DOC-001508,5103
 2026-05-23,-683937.0,CLP,Transferencia interna - Impuestos por Pagar,CC-005,DOC-001104,2102
@@ -1660,7 +1660,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-05-18,912275.0,USD,Devolucion - Proveedores,CC-008,DOC-001592,2101
 2026-06-09,-327078.0,CLP,Anticipo - Prestamos Bancarios,CC-002,DOC-002240,2201
 2026-07-08,1842068.0,CLP,Provision mensual - Caja,CC-006,DOC-001684,1101
-2025-12-08,712681.0,CLP,Cobro cliente - Inventario,CC-006,DOC-002522,1301
+2025-12-08,712681.0,CLP,Cobro cliente - Inventario,CC-006,DOC-002522,
 2026-05-12,-99727.0,CLP,Provision mensual - Gastos de Venta,CC-006,DOC-000816,5103
 2026-03-10,-1185539.0,CLP,Cobro cliente - Impuestos por Pagar,CC-006,DOC-001067,2102
 2026-05-30,179961.0,CLP,Anticipo - Caja,CC-002,DOC-002003,1101
@@ -1674,7 +1674,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-05-23,680933.0,CLP,Transferencia interna - Costo de Ventas,CC-008,DOC-000107,5101
 2026-05-29,-1642023.0,CLP,Regularizacion - Capital,CC-005,DOC-001862,3101
 2026-05-29,68700.0,CLP,Nota de debito - Costo de Ventas,CC-001,DOC-001521,5101
-2026-06-10,-2152539.0,USD,Transferencia interna - Impuestos por Pagar,CC-006,DOC-002168,2102
+2026-07-14,-50703.0,CLP,Reverso - Gastos de Venta,CC-005,COMP-0001-B,5103
 2026-06-09,-2034189.0,CLP,Regularizacion - Capital,CC-007,DOC-002202,3101
 2026-06-14,1077547.0,CLP,Compra de mercaderia - Gastos de Venta,CC-008,DOC-002054,5103
 2026-07-23,2405461.0,CLP,Pago a proveedor - Proveedores,CC-003,DOC-001764,2101
@@ -1696,7 +1696,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-07-23,2260339.0,CLP,Nomina - Bancos,CC-008,DOC-001530,1102
 2026-07-23,-2443611.0,CLP,Transferencia interna - Impuestos por Pagar,CC-007,DOC-002115,2102
 2026-02-08,-2428076.0,CLP,Ajuste contable - Prestamos Bancarios,CC-006,DOC-001514,2201
-2026-07-19,-462392.0,CLP,Pago a proveedor - Ventas,CC-006,DOC-002197,4101
+2025-10-29,-275307.0,USD,Nota de debito - Gastos de Venta,CC-002,DOC-001694,5103
 2026-05-29,-2978523.0,CLP,Nomina - Impuestos por Pagar,CC-004,DOC-001490,2102
 2026-08-08,2975894.0,CLP,Regularizacion - Inventario,CC-005,DOC-001171,1301
 2026-04-22,2553363.0,CLP,Anticipo - Clientes,CC-004,DOC-002452,1201
@@ -1733,7 +1733,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-07-02,1745254.0,USD,Pago de servicios - Costo de Ventas,CC-004,DOC-002733,5101
 2026-06-23,403984.0,CLP,Regularizacion - Bancos,CC-004,DOC-001599,1102
 2026-05-23,2415275.0,CLP,Anticipo - Costo de Ventas,CC-007,DOC-002610,5101
-,-2308476.0,CLP,Pago a proveedor - Prestamos Bancarios,CC-008,DOC-002457,2201
+2026-06-02,-2308476.0,CLP,Pago a proveedor - Prestamos Bancarios,CC-008,DOC-002457,2201
 2026-06-03,-29910.0,USD,Nota de debito - Impuestos por Pagar,CC-008,DOC-000701,2102
 2026-06-15,373715.0,USD,Pago a proveedor - Caja,CC-008,DOC-001878,1101
 2026-07-07,-400943.0,CLP,Provision mensual - Gastos de Venta,CC-008,DOC-002656,5103
@@ -1752,7 +1752,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-08-06,2579608.0,CLP,Provision mensual - Inventario,CC-005,DOC-000026,1301
 2026-07-18,654896.0,CLP,Transferencia interna - Clientes,CC-003,DOC-002059,1201
 2026-07-13,1698380.0,USD,Devolucion - Bancos,CC-007,DOC-001652,1102
-2026-06-10,1974461.0,CLP,Cobro cliente - Clientes,CC-005,DOC-001622,1201
+,1974461.0,CLP,Cobro cliente - Clientes,CC-005,DOC-001622,1201
 2026-07-28,-1850246.0,CLP,Regularizacion - Impuestos por Pagar,CC-004,DOC-000587,2102
 2026-08-07,2083439.0,CLP,Devolucion - Clientes,CC-003,DOC-002016,1201
 2026-06-30,-462446.0,CLP,Cobro cliente - Prestamos Bancarios,CC-002,DOC-000997,2201
@@ -1789,7 +1789,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-13,829946.0,CLP,Cobro cliente - Ventas,CC-007,DOC-001232,4101
 2026-05-17,1872650.0,CLP,Nomina - Bancos,CC-006,DOC-001138,1102
 2026-07-01,2945119.0,CLP,Nota de debito - Clientes,CC-006,DOC-000720,1201
-2026-05-21,-1731808.0,CLP,Nomina - Gastos de Venta,CC-002,DOC-000735,5103
+,-1731808.0,CLP,Nomina - Gastos de Venta,CC-002,DOC-000735,5103
 2026-07-22,2654974.0,CLP,Anticipo - Costo de Ventas,CC-001,DOC-002653,5101
 2026-07-19,-840495.0,CLP,Nomina - Prestamos Bancarios,CC-004,DOC-001750,2201
 2026-06-27,2186992.0,CLP,Anticipo - Bancos,CC-002,DOC-000058,1102
@@ -1809,7 +1809,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-08,-837403.0,CLP,Anticipo - Capital,CC-001,DOC-002543,3101
 2026-06-25,1894703.0,CLP,Nota de credito - Inventario,CC-003,DOC-001279,1301
 2026-06-23,2609392.0,CLP,Regularizacion - Costo de Ventas,CC-008,DOC-002402,5101
-2026-07-12,2967316.0,CLP,Nota de debito - Inventario,CC-003,DOC-001726,1301
+2026-06-17,-9685.0,CLP,Ajuste contable - Gastos de Venta,CC-002,DOC-000226,5103
 2025-12-11,367621.0,CLP,Nota de debito - Caja,CC-002,DOC-002126,1101
 2026-07-06,1008898.0,CLP,Cobro cliente - Bancos,CC-005,DOC-002387,1102
 2026-05-28,1880249.0,CLP,Transferencia interna - Costo de Ventas,CC-006,DOC-002042,5101
@@ -1823,7 +1823,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-08-08,2318238.0,CLP,Regularizacion - Costo de Ventas,CC-003,DOC-002357,5101
 2026-05-25,-2120291.0,CLP,Anticipo - Gastos de Venta,CC-001,DOC-002046,5103
 2026-01-29,2511745.0,CLP,Transferencia interna - Clientes,CC-001,DOC-000513,1201
-2026-06-30,-1015814.0,CLP,Compra de mercaderia - Impuestos por Pagar,CC-007,DOC-000081,
+2026-06-30,-1015814.0,CLP,Compra de mercaderia - Impuestos por Pagar,CC-007,DOC-000081,2102
 2026-08-05,-2730572.0,CLP,Devolucion - Prestamos Bancarios,CC-008,DOC-002661,2201
 2026-06-23,1963489.0,CLP,Nomina - Gastos Administrativos,CC-004,DOC-001308,5102
 2026-05-21,-2367539.0,CLP,Compra de mercaderia - Prestamos Bancarios,CC-007,DOC-002495,2201
@@ -1881,7 +1881,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-07,-2225647.0,CLP,Nota de debito - Gastos de Venta,CC-001,DOC-002877,5103
 2026-07-28,1738161.0,USD,Anticipo - Clientes,CC-007,DOC-000086,1201
 2026-08-03,1879736.0,CLP,Pago de servicios - Costo de Ventas,CC-004,DOC-001403,5101
-2026-05-28,333657.0,CLP,Regularizacion - Caja,CC-001,DOC-002926,1101
+2026-06-15,2602051.0,CLP,Pago de servicios - Inventario,CC-008,DOC-000779,1301
 2026-07-19,-1660497.0,CLP,Nomina - Capital,CC-007,DOC-001481,3101
 2026-07-18,-2557128.0,CLP,Provision mensual - Gastos de Venta,CC-004,DOC-000777,5103
 2026-08-06,-283913.0,CLP,Nomina - Gastos de Venta,CC-002,DOC-000799,5103
@@ -1966,7 +1966,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-11,-332611.0,CLP,Anticipo - Capital,CC-005,DOC-001552,3101
 2026-07-31,-1962938.0,CLP,Cobro cliente - Proveedores,CC-007,DOC-000346,2101
 2026-07-18,2870290.0,USD,Pago de servicios - Costo de Ventas,CC-003,DOC-002507,5101
-2026-06-25,-2917097.0,CLP,Nota de debito - Gastos de Venta,CC-002,DOC-002083,5103
+2026-05-12,577832.0,CLP,Anticipo - Bancos,CC-001,DOC-002722,1102
 2026-06-06,-2561612.0,CLP,Nomina - Impuestos por Pagar,CC-006,DOC-002037,2102
 2026-07-09,-2949344.0,CLP,Cobro cliente - Prestamos Bancarios,CC-008,DOC-001926,2201
 2026-06-09,1585506.0,CLP,Anticipo - Proveedores,CC-007,DOC-000385,2101
@@ -1982,9 +1982,9 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-08-01,2911672.0,USD,Compra de mercaderia - Gastos Administrativos,CC-005,DOC-002580,5102
 2026-06-23,-1348369.0,USD,Nomina - Impuestos por Pagar,CC-007,DOC-000312,2102
 2026-07-05,1205813.0,CLP,Devolucion - Caja,CC-003,DOC-001459,1101
-2026-07-22,-2609842.0,CLP,Nomina - Gastos de Venta,CC-005,DOC-002925,5103
+2026-07-11,-178428.0,CLP,Transferencia interna - Gastos de Venta,CC-001,DOC-000430,5103
 2025-07-27,1441776.0,CLP,Cobro cliente - Proveedores,CC-007,DOC-002107,2101
-2026-06-03,-558745.0,CLP,Pago a proveedor - Impuestos por Pagar,CC-007,DOC-001332,
+2026-06-03,-558745.0,CLP,Pago a proveedor - Impuestos por Pagar,CC-007,DOC-001332,2102
 2026-05-22,553826.0,CLP,Regularizacion - Ventas,CC-006,DOC-000968,4101
 2026-06-22,721136.0,CLP,Ajuste contable - Gastos de Venta,CC-008,DOC-001454,5103
 2026-06-26,2010638.0,CLP,Pago a proveedor - Proveedores,CC-002,DOC-000660,2101
@@ -1998,14 +1998,14 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-07-06,1599166.0,CLP,Devolucion - Inventario,CC-002,DOC-000824,1301
 2026-08-09,1588872.0,CLP,Compra de mercaderia - Bancos,CC-003,DOC-000982,1102
 2026-06-05,1847451.0,CLP,Regularizacion - Costo de Ventas,CC-004,DOC-002672,5101
-2026-05-26,2620040.0,CLP,Transferencia interna - Inventario,CC-006,DOC-000304,1301
+2026-06-26,126057.0,CLP,Compra de mercaderia - Gastos de Venta,CC-006,DOC-000628,5103
 2026-07-28,237050.0,CLP,Regularizacion - Costo de Ventas,CC-002,DOC-001645,5101
 2026-06-07,1124529.0,USD,Regularizacion - Costo de Ventas,CC-003,DOC-002582,5101
 2026-07-22,2111188.0,CLP,Pago a proveedor - Inventario,CC-002,DOC-002245,1301
 2026-05-22,439426.0,CLP,Nota de credito - Ventas,CC-003,DOC-002118,4101
 2026-07-15,1734306.0,USD,Nota de debito - Ventas,CC-006,DOC-000813,4101
 2026-06-24,-1722141.0,USD,Compra de mercaderia - Gastos de Venta,CC-003,DOC-001792,5103
-2026-08-08,,CLP,Ajuste contable - Inventario,CC-002,DOC-001430,1301
+2026-08-08,1090383.0,CLP,Ajuste contable - Inventario,CC-002,DOC-001430,1301
 2026-08-09,2776678.0,USD,Provision mensual - Caja,CC-004,DOC-000778,1101
 2026-07-17,2243488.0,CLP,Compra de mercaderia - Gastos Administrativos,CC-001,DOC-001749,5102
 2026-07-05,2090647.0,CLP,Nomina - Ventas,CC-002,DOC-001320,4101
@@ -2018,7 +2018,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-07-15,1606112.0,CLP,Pago de servicios - Gastos Administrativos,CC-006,DOC-001401,5102
 2026-05-20,2082680.0,CLP,Nota de debito - Proveedores,CC-004,DOC-001822,2101
 2026-07-11,-2157328.0,CLP,Devolucion - Gastos de Venta,CC-005,DOC-002247,5103
-2026-05-15,305606.0,CLP,Regularizacion - Ventas,CC-007,DOC-002493,
+2026-05-15,305606.0,CLP,Regularizacion - Ventas,CC-007,DOC-002493,4101
 2026-06-13,-1745196.0,CLP,Devolucion - Impuestos por Pagar,CC-007,DOC-002591,2102
 2026-06-11,-734974.0,CLP,Nomina - Prestamos Bancarios,CC-004,DOC-000126,2201
 2026-07-20,1194559.0,CLP,Devolucion - Ventas,CC-005,DOC-002091,4101
@@ -2048,7 +2048,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-05-22,-452405.0,CLP,Nomina - Impuestos por Pagar,CC-003,DOC-002058,2102
 2026-07-25,-1980954.0,CLP,Regularizacion - Ventas,CC-007,DOC-000022,4101
 2026-01-03,2452666.0,CLP,Cobro cliente - Clientes,CC-004,DOC-000711,1201
-2026-05-25,-2786316.0,CLP,Pago a proveedor - Gastos de Venta,CC-005,DOC-000747,5103
+2026-07-01,2652375.0,USD,Devolucion - Inventario,CC-005,DOC-001159,1301
 2026-07-13,2055420.0,CLP,Nota de debito - Gastos Administrativos,CC-001,DOC-000010,5102
 2026-07-23,2300641.0,CLP,Pago de servicios - Gastos Administrativos,CC-006,DOC-002416,5102
 2026-06-29,1524712.0,CLP,Regularizacion - Gastos Administrativos,CC-002,DOC-001834,5102
@@ -2082,18 +2082,18 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-15,95873.0,CLP,Nota de debito - Ventas,CC-002,DOC-001970,4101
 2026-07-29,2467305.0,USD,Devolucion - Clientes,CC-003,DOC-000820,1201
 2026-07-17,2306805.0,CLP,Pago a proveedor - Gastos Administrativos,CC-001,DOC-001997,5102
-,1701888.0,CLP,Ajuste contable - Clientes,CC-006,DOC-002868,1201
+2026-07-13,1701888.0,CLP,Ajuste contable - Clientes,CC-006,DOC-002868,1201
 2026-06-24,2726725.0,CLP,Pago a proveedor - Inventario,CC-007,DOC-001248,1301
 2026-06-25,1659889.0,CLP,Nota de credito - Bancos,CC-006,DOC-002872,1102
 2026-08-04,2478426.0,CLP,Pago de servicios - Proveedores,CC-002,DOC-002649,2101
 2026-05-20,1837949.0,CLP,Cobro cliente - Caja,CC-008,DOC-001046,1101
-2026-07-21,-1260621.0,CLP,Regularizacion - Impuestos por Pagar,CC-003,DOC-001888,
+2026-07-21,-1260621.0,CLP,Regularizacion - Impuestos por Pagar,CC-003,DOC-001888,2102
 2026-05-17,2399982.0,CLP,Nota de debito - Inventario,CC-008,DOC-000615,1301
 2026-06-21,900810.0,CLP,Ajuste contable - Clientes,CC-001,DOC-001318,1201
 2026-06-05,2982079.0,CLP,Provision mensual - Inventario,CC-001,DOC-002884,1301
 2026-07-22,2511950.0,CLP,Provision mensual - Ventas,CC-008,DOC-002460,4101
 2026-06-21,2744185.0,CLP,Ajuste contable - Costo de Ventas,CC-008,DOC-001772,5101
-2026-06-29,81060.0,CLP,Pago a proveedor - Gastos de Venta,CC-001,DOC-002489,5103
+2026-06-22,830901.0,CLP,Pago a proveedor - Inventario,CC-005,DOC-002219,1301
 2026-06-19,135724.0,CLP,Nota de credito - Costo de Ventas,CC-007,DOC-000131,5101
 2025-11-12,-899345.0,CLP,Nomina - Capital,CC-004,DOC-000077,3101
 2026-06-14,40937.0,CLP,Cobro cliente - Bancos,CC-006,DOC-002052,1102
@@ -2176,10 +2176,10 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-08-01,1709612.0,CLP,Regularizacion - Gastos Administrativos,CC-005,DOC-001605,5102
 2026-05-17,177522.0,CLP,Provision mensual - Clientes,CC-004,DOC-002784,1201
 2026-05-03,1373847.0,CLP,Ajuste contable - Caja,CC-001,DOC-002666,1101
-2026-06-19,2599732.0,CLP,Devolucion - Inventario,CC-002,DOC-002665,
+2026-06-19,2599732.0,CLP,Devolucion - Inventario,CC-002,DOC-002665,1301
 2026-06-23,-837870.0,USD,Nota de debito - Prestamos Bancarios,CC-008,DOC-001989,2201
 2026-06-21,-1881637.0,USD,Regularizacion - Impuestos por Pagar,CC-007,DOC-002609,2102
-2026-05-18,-2124374.0,CLP,Cobro cliente - Capital,CC-002,DOC-001975,
+2026-05-18,-2124374.0,CLP,Cobro cliente - Capital,CC-002,DOC-001975,3101
 2026-01-12,-2290703.0,CLP,Nomina - Proveedores,CC-007,DOC-001761,2101
 2026-06-30,2708432.0,CLP,Provision mensual - Clientes,CC-005,DOC-001305,1201
 2026-07-22,-1193799.0,CLP,Pago de servicios - Impuestos por Pagar,CC-001,DOC-001541,2102
@@ -2229,7 +2229,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-19,1553330.0,USD,Nota de debito - Bancos,CC-004,DOC-002608,1102
 2026-05-27,-218347.0,CLP,Cobro cliente - Capital,CC-007,DOC-001276,3101
 2025-07-14,-2189841.0,CLP,Regularizacion - Prestamos Bancarios,CC-001,DOC-002635,2201
-2026-05-27,642218.0,CLP,Compra de mercaderia - Costo de Ventas,CC-008,DOC-000624,
+2026-05-27,642218.0,CLP,Compra de mercaderia - Costo de Ventas,CC-008,DOC-000624,5101
 2026-07-17,-688194.0,CLP,Nota de credito - Impuestos por Pagar,CC-006,DOC-002055,2102
 2026-05-15,446365.0,CLP,Devolucion - Proveedores,CC-003,DOC-001280,2101
 2026-06-08,-359944.0,CLP,Provision mensual - Capital,CC-005,DOC-001049,3101
@@ -2261,7 +2261,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-01,499193.0,CLP,Anticipo - Clientes,CC-001,DOC-000899,1201
 2026-06-30,-1377323.0,USD,Compra de mercaderia - Capital,CC-003,DOC-001935,3101
 2026-07-16,-385710.0,CLP,Cobro cliente - Ventas,CC-002,DOC-001994,4101
-2026-07-09,-2071274.0,CLP,Nota de debito - Gastos de Venta,CC-005,DOC-002312,5103
+,-2071274.0,CLP,Nota de debito - Gastos de Venta,CC-005,DOC-002312,5103
 2026-08-08,1132937.0,CLP,Compra de mercaderia - Gastos de Venta,CC-003,DOC-000760,5103
 2025-12-20,1182836.0,CLP,Nota de debito - Gastos Administrativos,CC-006,DOC-002158,5102
 2026-07-13,580901.0,CLP,Nomina - Proveedores,CC-003,DOC-002622,2101
@@ -2295,7 +2295,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-04-09,-792534.0,USD,Devolucion - Prestamos Bancarios,CC-002,DOC-000434,2201
 2026-06-05,1972391.0,CLP,Nota de credito - Ventas,CC-007,DOC-002122,4101
 2026-04-17,-1661913.0,CLP,Anticipo - Capital,CC-008,DOC-000577,3101
-2026-05-30,1790627.0,CLP,Nota de credito - Inventario,CC-008,DOC-002538,1301
+2026-08-08,408158.0,CLP,Ajuste contable - Prestamos Bancarios,CC-003,COMP-0000-A,2201
 2026-07-27,269717.0,CLP,Provision mensual - Caja,CC-003,DOC-002741,1101
 2026-07-02,963448.0,CLP,Cobro cliente - Inventario,CC-005,DOC-001848,1301
 2026-07-07,1990630.0,USD,Pago de servicios - Bancos,CC-002,DOC-000762,1102
@@ -2312,7 +2312,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-08-05,205887.0,CLP,Pago a proveedor - Clientes,CC-005,DOC-002201,1201
 2026-03-01,-1847550.0,CLP,Provision mensual - Prestamos Bancarios,CC-006,DOC-001574,2201
 2026-05-13,-1292771.0,CLP,Nota de credito - Capital,CC-006,DOC-002142,3101
-2026-04-24,,CLP,Nota de debito - Prestamos Bancarios,CC-001,DOC-002081,2201
+2026-04-24,-1932645.0,CLP,Nota de debito - Prestamos Bancarios,CC-001,DOC-002081,2201
 2026-06-30,1120303.0,CLP,Pago a proveedor - Ventas,CC-001,DOC-002617,4101
 2026-08-01,1365972.0,CLP,Transferencia interna - Gastos Administrativos,CC-005,DOC-002903,5102
 2025-10-08,2517596.0,CLP,Provision mensual - Costo de Ventas,CC-001,DOC-002739,5101
@@ -2334,7 +2334,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2025-07-23,-2340591.0,CLP,Provision mensual - Prestamos Bancarios,CC-004,DOC-000517,2201
 2026-07-30,-1211538.0,CLP,Nota de credito - Capital,CC-006,DOC-000404,3101
 2026-06-03,564945.0,CLP,Transferencia interna - Costo de Ventas,CC-002,DOC-000384,5101
-2026-05-25,2525930.0,CLP,Pago de servicios - Gastos de Venta,CC-007,DOC-001442,5103
+2026-07-30,-2439489.0,USD,Transferencia interna - Capital,CC-002,DOC-000830,3101
 2026-08-01,1700641.0,CLP,Nota de debito - Bancos,CC-007,DOC-002152,1102
 2026-08-03,-2423153.0,CLP,Nota de credito - Prestamos Bancarios,CC-005,DOC-001633,2201
 2026-05-30,2784369.0,CLP,Nota de debito - Costo de Ventas,CC-004,DOC-002859,5101
@@ -2357,11 +2357,11 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-07-31,974890.0,CLP,Pago a proveedor - Costo de Ventas,CC-004,DOC-001944,5101
 2026-07-10,1759104.0,CLP,Transferencia interna - Caja,CC-002,DOC-001838,1101
 2026-08-09,702267.0,CLP,Transferencia interna - Clientes,CC-004,DOC-000708,1201
-2026-06-01,826981.0,CLP,Cobro cliente - Proveedores,CC-003,DOC-000255,2101
+2026-06-01,,CLP,Cobro cliente - Proveedores,CC-003,DOC-000255,2101
 2026-06-16,-2105507.0,CLP,Cobro cliente - Prestamos Bancarios,CC-008,DOC-001617,2201
-2025-08-09,,CLP,Ajuste contable - Prestamos Bancarios,CC-003,DOC-000389,2201
+2025-08-09,-2081832.0,CLP,Ajuste contable - Prestamos Bancarios,CC-003,DOC-000389,2201
 2026-07-26,1561869.0,CLP,Cobro cliente - Clientes,CC-008,DOC-001581,1201
-2026-05-29,,CLP,Transferencia interna - Clientes,CC-008,DOC-000924,1201
+2026-05-29,2243124.0,CLP,Transferencia interna - Clientes,CC-008,DOC-000924,1201
 2026-06-11,1143151.0,CLP,Nota de credito - Proveedores,CC-007,DOC-002036,2101
 2026-07-04,439817.0,CLP,Anticipo - Bancos,CC-007,DOC-002403,1102
 2026-05-25,2741688.0,CLP,Nomina - Costo de Ventas,CC-007,DOC-001224,5101
@@ -2403,11 +2403,11 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-05-12,930000.0,CLP,Devolucion - Costo de Ventas,CC-002,DOC-001140,5101
 2026-06-14,1461250.0,CLP,Cobro cliente - Bancos,CC-008,DOC-000933,1102
 2026-06-29,2208604.0,CLP,Devolucion - Gastos Administrativos,CC-006,DOC-000928,5102
-2026-07-02,,CLP,Provision mensual - Ventas,CC-006,DOC-000823,4101
+2026-07-02,-72328.0,CLP,Provision mensual - Ventas,CC-006,DOC-000823,4101
 2026-06-04,725368.0,CLP,Transferencia interna - Gastos Administrativos,CC-005,DOC-001531,5102
 2026-07-29,360171.0,CLP,Pago de servicios - Proveedores,CC-004,DOC-001214,2101
 2025-07-25,-1765863.0,CLP,Cobro cliente - Prestamos Bancarios,CC-002,DOC-000504,2201
-2026-07-09,-1078974.0,CLP,Provision mensual - Gastos de Venta,CC-005,DOC-001934,5103
+2026-08-03,-1423872.0,CLP,Pago de servicios - Gastos de Venta,CC-008,DOC-002072,5103
 2026-06-04,2495018.0,CLP,Pago a proveedor - Costo de Ventas,CC-002,DOC-002395,5101
 2026-06-24,1317135.0,CLP,Anticipo - Inventario,CC-001,DOC-001996,1301
 2026-05-15,1762683.0,CLP,Anticipo - Clientes,CC-001,DOC-001958,1201
@@ -2417,7 +2417,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-05-23,2169546.0,CLP,Ajuste contable - Gastos Administrativos,CC-001,DOC-002920,5102
 2026-07-14,14577.0,CLP,Provision mensual - Ventas,CC-003,DOC-001683,4101
 2026-08-09,205652.0,CLP,Compra de mercaderia - Costo de Ventas,CC-003,DOC-002574,5101
-2026-07-29,-2686501.0,CLP,Nomina - Ventas,CC-002,DOC-002289,4101
+2026-07-22,351101.0,CLP,Devolucion - Caja,CC-008,DOC-002528,1101
 2025-09-16,-2212659.0,CLP,Provision mensual - Prestamos Bancarios,CC-003,DOC-002512,2201
 2026-05-29,1036347.0,CLP,Devolucion - Proveedores,CC-002,DOC-000652,2101
 2026-06-13,1519125.0,CLP,Nota de debito - Costo de Ventas,CC-002,DOC-000172,5101
@@ -2425,7 +2425,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-07-08,-830985.0,CLP,Compra de mercaderia - Gastos de Venta,CC-007,DOC-002860,5103
 2026-06-05,-1999694.0,CLP,Compra de mercaderia - Gastos de Venta,CC-006,DOC-000713,5103
 2026-07-28,-1303403.0,CLP,Transferencia interna - Prestamos Bancarios,CC-003,DOC-000090,2201
-2026-07-14,-659319.0,CLP,Anticipo - Gastos de Venta,CC-007,DOC-002322,5103
+2026-08-06,258408.0,CLP,Regularizacion - Ventas,CC-003,DOC-001336,4101
 2026-06-11,2374037.0,CLP,Ajuste contable - Inventario,CC-007,DOC-001205,1301
 2026-05-20,2005611.0,USD,Regularizacion - Costo de Ventas,CC-008,DOC-002585,5101
 2026-06-22,775631.0,CLP,Provision mensual - Clientes,CC-005,DOC-001827,1201
@@ -2454,7 +2454,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-21,448297.0,CLP,Transferencia interna - Inventario,CC-001,DOC-000750,1301
 2026-06-24,1313669.0,CLP,Nomina - Proveedores,CC-006,DOC-000234,2101
 2026-08-03,-2471811.0,CLP,Pago a proveedor - Impuestos por Pagar,CC-002,DOC-000732,2102
-2026-06-02,2290174.0,USD,Anticipo - Gastos Administrativos,CC-006,DOC-001631,5102
+2026-07-29,305150.0,CLP,Regularizacion - Costo de Ventas,CC-005,COMP-0004-A,5101
 2026-07-09,-2519266.0,CLP,Pago de servicios - Capital,CC-004,DOC-001156,3101
 2025-08-21,-2010846.0,CLP,Anticipo - Prestamos Bancarios,CC-002,DOC-002573,2201
 2026-06-05,2340758.0,CLP,Nota de debito - Inventario,CC-001,DOC-002445,1301
@@ -2467,7 +2467,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-05-22,1871425.0,CLP,Regularizacion - Caja,CC-002,DOC-002474,1101
 2026-08-02,-1622686.0,CLP,Nota de credito - Capital,CC-008,DOC-000884,3101
 2026-05-27,-900967.0,USD,Nota de credito - Capital,CC-005,DOC-000143,3101
-2026-05-15,1943471.0,CLP,Transferencia interna - Inventario,CC-003,DOC-001052,1301
+2026-07-18,2428490.0,CLP,Nomina - Inventario,CC-008,DOC-001288,1301
 2026-07-24,258567.0,CLP,Nomina - Gastos Administrativos,CC-008,DOC-000850,5102
 2026-08-09,-2906661.0,CLP,Nota de credito - Prestamos Bancarios,CC-008,DOC-000717,2201
 2026-02-12,349855.0,CLP,Pago a proveedor - Clientes,CC-008,DOC-002864,1201
@@ -2492,7 +2492,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-05-28,2208533.0,CLP,Pago de servicios - Inventario,CC-001,DOC-000036,1301
 2026-07-16,2735405.0,CLP,Transferencia interna - Caja,CC-002,DOC-002526,1101
 2026-06-18,1423606.0,CLP,Regularizacion - Gastos Administrativos,CC-007,DOC-002143,5102
-2026-08-08,2089617.0,CLP,Pago a proveedor - Inventario,CC-004,DOC-001088,1301
+2026-07-05,748438.0,CLP,Pago a proveedor - Ventas,CC-005,DOC-002075,4101
 2025-09-06,2273215.0,CLP,Cobro cliente - Bancos,CC-001,DOC-000977,1102
 2026-06-01,602572.0,CLP,Devolucion - Proveedores,CC-008,DOC-001571,2101
 2026-07-03,2180895.0,USD,Cobro cliente - Inventario,CC-001,DOC-001122,1301
@@ -2501,18 +2501,18 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-17,1437569.0,CLP,Regularizacion - Caja,CC-006,DOC-000675,1101
 2026-08-02,136113.0,USD,Ajuste contable - Bancos,CC-001,DOC-000728,1102
 2026-07-20,160103.0,CLP,Nota de credito - Gastos Administrativos,CC-004,DOC-000412,5102
-,2151824.0,CLP,Anticipo - Caja,CC-006,DOC-001516,1101
+2026-08-09,2151824.0,CLP,Anticipo - Caja,CC-006,DOC-001516,1101
 2026-07-04,2791274.0,USD,Pago a proveedor - Clientes,CC-002,DOC-001649,1201
 2026-07-06,-347809.0,CLP,Cobro cliente - Proveedores,CC-004,DOC-000825,2101
 2026-07-04,2016697.0,CLP,Provision mensual - Gastos Administrativos,CC-008,DOC-000616,5102
 2026-07-03,2100702.0,USD,Regularizacion - Bancos,CC-008,DOC-000114,1102
 2026-07-23,209893.0,CLP,Anticipo - Gastos Administrativos,CC-003,DOC-000417,5102
 2026-06-07,-317613.0,CLP,Nomina - Impuestos por Pagar,CC-008,DOC-001625,2102
-2026-07-29,16527.0,CLP,Ajuste contable - Ventas,CC-005,DOC-002939,4101
+2026-07-07,-184361.0,CLP,Pago de servicios - Gastos de Venta,CC-001,DOC-002214,5103
 2026-05-18,-1114860.0,CLP,Pago de servicios - Impuestos por Pagar,CC-001,DOC-000089,2102
 2026-07-25,-1492546.0,CLP,Cobro cliente - Ventas,CC-003,DOC-002082,4101
 2026-06-16,973618.0,USD,Cobro cliente - Inventario,CC-002,DOC-000753,1301
-2026-01-26,-1141084.0,CLP,Regularizacion - Capital,CC-001,DOC-001630,3101
+2026-01-26,-1141084.0,CLP,Regularizacion - Capital,CC-001,DOC-001630,
 2026-07-01,1206489.0,CLP,Anticipo - Inventario,CC-006,DOC-000011,1301
 2026-07-26,-1363453.0,CLP,Nomina - Prestamos Bancarios,CC-008,DOC-002444,2201
 2026-05-12,-1469564.0,CLP,Nota de debito - Gastos de Venta,CC-005,DOC-000284,5103
@@ -2549,9 +2549,9 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-07-04,394507.0,CLP,Nota de credito - Caja,CC-001,DOC-002388,1101
 2026-06-04,296647.0,CLP,Pago de servicios - Gastos de Venta,CC-001,DOC-002479,5103
 2026-07-18,714204.0,CLP,Pago a proveedor - Gastos Administrativos,CC-001,DOC-002521,5102
-2026-06-22,1684460.0,CLP,Regularizacion - Bancos,CC-004,DOC-002265,1102
+,1684460.0,CLP,Regularizacion - Bancos,CC-004,DOC-002265,1102
 2026-05-25,1468397.0,CLP,Cobro cliente - Caja,CC-007,DOC-001227,1101
-2026-06-03,2579290.0,CLP,Pago de servicios - Gastos de Venta,CC-008,DOC-002822,5103
+2026-06-03,2579290.0,CLP,Pago de servicios - Gastos de Venta,CC-008,DOC-002822,
 2026-05-26,262804.0,CLP,Transferencia interna - Clientes,CC-006,DOC-000957,1201
 2025-12-08,1309025.0,CLP,Devolucion - Inventario,CC-003,DOC-001773,1301
 2026-05-13,-2844383.0,CLP,Ajuste contable - Gastos de Venta,CC-001,DOC-002141,5103
@@ -2590,7 +2590,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-22,2792402.0,CLP,Devolucion - Bancos,CC-005,DOC-000656,1102
 2026-05-14,-2042253.0,CLP,Provision mensual - Capital,CC-004,DOC-002732,3101
 2026-06-14,724910.0,CLP,Nomina - Clientes,CC-002,DOC-002692,1201
-2026-02-07,56238.0,CLP,Pago a proveedor - Clientes,CC-005,DOC-002932,1201
+2026-08-09,-906844.0,CLP,Compra de mercaderia - Gastos de Venta,CC-003,DOC-000548,5103
 2026-07-27,-1447142.0,CLP,Provision mensual - Prestamos Bancarios,CC-003,DOC-000635,2201
 2026-05-30,-603401.0,USD,Ajuste contable - Impuestos por Pagar,CC-001,DOC-000369,2102
 2026-07-28,-1295629.0,CLP,Nota de debito - Proveedores,CC-007,DOC-000268,2101
@@ -2637,7 +2637,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-20,-1877811.0,USD,Compra de mercaderia - Capital,CC-006,DOC-001890,3101
 2026-06-09,2356707.0,CLP,Ajuste contable - Costo de Ventas,CC-007,DOC-000537,5101
 2025-08-30,-2184035.0,USD,Nota de debito - Prestamos Bancarios,CC-002,DOC-001705,2201
-2026-07-04,-1977219.0,CLP,Nomina - Gastos de Venta,CC-003,DOC-002931,5103
+2026-06-19,2599732.0,CLP,Devolucion - Inventario,CC-002,DOC-002665,1301
 2026-07-05,2083472.0,USD,Provision mensual - Inventario,CC-002,DOC-000245,1301
 2026-07-05,-1386735.0,CLP,Anticipo - Prestamos Bancarios,CC-001,DOC-000784,2201
 2026-07-02,492941.0,CLP,Nomina - Gastos Administrativos,CC-004,DOC-001409,5102
@@ -2648,16 +2648,16 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-01-25,1969790.0,CLP,Provision mensual - Clientes,CC-008,DOC-002876,1201
 2026-08-02,991426.0,CLP,Pago de servicios - Gastos Administrativos,CC-005,DOC-001346,5102
 2026-08-06,1673607.0,CLP,Cobro cliente - Bancos,CC-005,DOC-000569,1102
-2026-06-03,654790.0,USD,Compra de mercaderia - Clientes,CC-008,DOC-002933,1201
+2026-05-22,566941.0,CLP,Cobro cliente - Inventario,CC-003,DOC-002900,1301
 2026-06-29,1013332.0,USD,Ajuste contable - Clientes,CC-006,DOC-001758,1201
 2026-08-02,-25616.0,CLP,Devolucion - Capital,CC-007,DOC-001816,3101
 2026-07-05,1026586.0,CLP,Nota de credito - Costo de Ventas,CC-003,DOC-002065,5101
 2026-07-24,2592761.0,CLP,Nota de debito - Costo de Ventas,CC-007,DOC-000127,5101
-2026-08-06,1693098.0,CLP,Devolucion - Inventario,CC-008,DOC-002004,1301
+2026-05-21,1420261.0,CLP,Nomina - Proveedores,CC-003,DOC-000962,2101
 2026-07-09,1038713.0,USD,Transferencia interna - Gastos Administrativos,CC-008,DOC-002006,5102
 2026-07-30,440943.0,CLP,Compra de mercaderia - Gastos Administrativos,CC-006,DOC-000980,5102
-2025-07-19,-359960.0,CLP,Pago a proveedor - Gastos de Venta,CC-004,DOC-002725,5103
-2026-05-17,2419570.0,CLP,Pago a proveedor - Ventas,CC-007,DOC-000190,4101
+2025-09-27,169093.0,CLP,Nomina - Clientes,CC-002,DOC-001181,1201
+2026-05-17,2419570.0,CLP,Pago a proveedor - Ventas,CC-007,DOC-000190,
 2025-09-27,2209059.0,CLP,Nota de credito - Ventas,CC-001,DOC-001139,4101
 2026-06-28,-604789.0,CLP,Nomina - Impuestos por Pagar,CC-002,DOC-000992,2102
 2026-06-03,932436.0,CLP,Nota de debito - Ventas,CC-002,DOC-000699,4101
@@ -2675,7 +2675,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-24,2526628.0,CLP,Nomina - Bancos,CC-007,DOC-002205,1102
 2026-05-18,730669.0,USD,Ajuste contable - Bancos,CC-008,DOC-001243,1102
 2026-06-01,2583035.0,CLP,Devolucion - Ventas,CC-005,DOC-000016,4101
-2026-07-20,1194559.0,CLP,Devolucion - Ventas,CC-005,DOC-002091,4101
+2026-08-03,1307774.0,USD,Provision mensual - Bancos,CC-005,DOC-000449,1102
 2026-05-26,2984067.0,CLP,Pago a proveedor - Ventas,CC-001,DOC-000546,4101
 2026-06-05,861590.0,CLP,Anticipo - Inventario,CC-004,DOC-000658,1301
 2026-08-05,465419.0,CLP,Devolucion - Caja,CC-007,DOC-002704,1101
@@ -2688,14 +2688,14 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-05-26,1817219.0,CLP,Pago a proveedor - Gastos Administrativos,CC-004,DOC-002074,5102
 2026-06-27,253861.0,CLP,Regularizacion - Gastos Administrativos,CC-006,DOC-001799,5102
 2025-11-26,-2592783.0,CLP,Nomina - Prestamos Bancarios,CC-008,DOC-002485,2201
-2026-07-09,887917.0,CLP,Pago de servicios - Inventario,CC-007,DOC-001855,
+2026-07-07,-2142523.0,CLP,Regularizacion - Gastos de Venta,CC-006,DOC-002335,5103
 2026-06-22,970031.0,CLP,Pago a proveedor - Ventas,CC-008,DOC-002277,4101
 2026-07-15,1348252.0,USD,Compra de mercaderia - Ventas,CC-004,DOC-002085,4101
 2026-05-22,-335395.0,CLP,Ajuste contable - Ventas,CC-001,DOC-001693,4101
 2026-06-23,2834548.0,CLP,Provision mensual - Clientes,CC-001,DOC-001045,1201
 2026-06-03,2449774.0,USD,Pago a proveedor - Gastos Administrativos,CC-004,DOC-000469,5102
 2025-10-05,-1112042.0,CLP,Compra de mercaderia - Prestamos Bancarios,CC-006,DOC-000954,2201
-2026-08-06,1998332.0,USD,Ajuste contable - Inventario,CC-006,DOC-000945,1301
+2026-05-31,-221796.0,CLP,Cobro cliente - Prestamos Bancarios,CC-005,DOC-000663,2201
 2026-05-25,2978364.0,CLP,Ajuste contable - Bancos,CC-004,DOC-000639,1102
 2026-07-25,2540296.0,CLP,Nomina - Clientes,CC-002,DOC-002778,1201
 2026-07-22,-2597071.0,CLP,Nota de credito - Capital,CC-004,DOC-001218,3101
@@ -2764,7 +2764,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-07-12,1118492.0,CLP,Pago a proveedor - Clientes,CC-003,DOC-001986,1201
 2026-07-09,682155.0,CLP,Compra de mercaderia - Clientes,CC-006,DOC-001369,1201
 2026-05-30,1196802.0,CLP,Anticipo - Costo de Ventas,CC-001,DOC-002450,5101
-2026-07-29,1956805.0,CLP,Provision mensual - Costo de Ventas,CC-002,DOC-002936,
+2026-07-18,-967195.0,CLP,Provision mensual - Gastos de Venta,CC-005,DOC-001864,5103
 2026-08-06,1082421.0,CLP,Ajuste contable - Costo de Ventas,CC-002,DOC-000659,5101
 2025-10-11,-1973352.0,CLP,Transferencia interna - Prestamos Bancarios,CC-006,DOC-001794,2201
 2026-05-29,-2567818.0,CLP,Compra de mercaderia - Gastos de Venta,CC-005,DOC-002511,5103
@@ -2785,7 +2785,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-17,2041311.0,CLP,Regularizacion - Caja,CC-005,DOC-001439,1101
 2026-05-24,1681583.0,USD,Nomina - Gastos de Venta,CC-006,DOC-001733,5103
 2026-01-24,1089483.0,CLP,Ajuste contable - Gastos Administrativos,CC-007,DOC-001695,5102
-2026-07-19,1712202.0,CLP,Transferencia interna - Caja,CC-008,DOC-002928,1101
+2026-05-12,2206980.0,USD,Provision mensual - Ventas,CC-008,DOC-001623,4101
 2026-07-02,1000644.0,CLP,Cobro cliente - Costo de Ventas,CC-002,DOC-001707,5101
 2026-05-13,-2711802.0,CLP,Devolucion - Capital,CC-004,DOC-002913,3101
 2026-06-07,614353.0,USD,Pago de servicios - Bancos,CC-003,DOC-001153,1102
@@ -2801,7 +2801,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-05-13,1620166.0,CLP,Transferencia interna - Clientes,CC-007,DOC-000698,1201
 2026-07-04,1015909.0,CLP,Anticipo - Inventario,CC-005,DOC-001636,1301
 2026-08-09,187864.0,CLP,Pago a proveedor - Gastos Administrativos,CC-001,DOC-001291,5102
-2026-04-01,-2560709.0,CLP,Regularizacion - Prestamos Bancarios,CC-006,DOC-002856,2201
+2026-04-01,,CLP,Regularizacion - Prestamos Bancarios,CC-006,DOC-002856,2201
 2026-06-29,81060.0,CLP,Pago a proveedor - Gastos de Venta,CC-001,DOC-002489,5103
 2025-12-22,-1266606.0,CLP,Ajuste contable - Capital,CC-006,DOC-001520,3101
 2026-06-18,-21989.0,USD,Pago a proveedor - Prestamos Bancarios,CC-007,DOC-001853,2201
@@ -2829,10 +2829,10 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-13,1905217.0,CLP,Devolucion - Gastos de Venta,CC-004,DOC-001496,5103
 2026-07-08,1659386.0,CLP,Compra de mercaderia - Clientes,CC-002,DOC-002038,1201
 2026-05-24,2375925.0,CLP,Ajuste contable - Proveedores,CC-008,DOC-001529,2101
-,-2092301.0,CLP,Compra de mercaderia - Prestamos Bancarios,CC-002,DOC-001663,2201
+2026-06-20,-2092301.0,CLP,Compra de mercaderia - Prestamos Bancarios,CC-002,DOC-001663,2201
 2026-06-17,1564181.0,USD,Provision mensual - Ventas,CC-005,DOC-001354,4101
-2026-02-12,2347422.0,CLP,Compra de mercaderia - Clientes,CC-002,DOC-002924,1201
-2026-07-06,-1927056.0,CLP,Ajuste contable - Gastos de Venta,CC-004,DOC-002889,5103
+2026-06-24,-2313537.0,CLP,Devolucion - Gastos de Venta,CC-006,DOC-000718,5103
+2026-06-02,-799468.0,CLP,Pago a proveedor - Gastos de Venta,CC-007,DOC-000490,5103
 2026-06-15,1741773.0,CLP,Nota de credito - Gastos Administrativos,CC-004,DOC-001643,5102
 2026-02-26,-91175.0,USD,Provision mensual - Prestamos Bancarios,CC-008,DOC-001051,2201
 2026-05-26,-24686.0,CLP,Compra de mercaderia - Capital,CC-004,DOC-000795,3101
@@ -2849,7 +2849,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-07-13,2082107.0,CLP,Ajuste contable - Gastos Administrativos,CC-002,DOC-000540,5102
 2026-07-13,-2183448.0,CLP,Regularizacion - Impuestos por Pagar,CC-006,DOC-001678,2102
 2026-07-21,2823171.0,CLP,Compra de mercaderia - Inventario,CC-006,DOC-002796,1301
-2026-06-11,-1686649.0,CLP,Nota de debito - Gastos de Venta,CC-008,DOC-002482,5103
+2026-05-17,1977264.0,CLP,Devolucion - Gastos de Venta,CC-007,DOC-001328,5103
 2026-05-23,2241585.0,CLP,Compra de mercaderia - Inventario,CC-004,DOC-002532,1301
 2026-08-06,970504.0,CLP,Pago de servicios - Gastos Administrativos,CC-001,DOC-001757,5102
 2026-07-30,2992828.0,CLP,Anticipo - Inventario,CC-006,DOC-001923,1301
@@ -2926,7 +2926,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-08-04,1605205.0,CLP,Compra de mercaderia - Gastos Administrativos,CC-007,DOC-001981,5102
 2026-07-30,1846950.0,CLP,Transferencia interna - Bancos,CC-001,DOC-000201,1102
 2026-05-20,1079228.0,CLP,Provision mensual - Gastos Administrativos,CC-002,DOC-000161,5102
-2026-07-23,1688338.0,CLP,Devolucion - Gastos de Venta,CC-003,DOC-001579,
+2026-07-23,1688338.0,CLP,Devolucion - Gastos de Venta,CC-003,DOC-001579,5103
 2026-07-13,1704821.0,CLP,Compra de mercaderia - Costo de Ventas,CC-007,DOC-002777,5101
 2026-08-01,-1570898.0,CLP,Ajuste contable - Prestamos Bancarios,CC-002,DOC-002449,2201
 2025-10-03,2394905.0,CLP,Regularizacion - Proveedores,CC-006,DOC-000702,2101
@@ -2953,7 +2953,7 @@ fecha_documento,monto,moneda,glosa,centro_costo,referencia,cuenta_contable
 2026-06-30,1147211.0,CLP,Cobro cliente - Caja,CC-007,DOC-000600,1101
 2026-08-04,2179330.0,CLP,Pago a proveedor - Proveedores,CC-003,DOC-002435,2101
 2026-05-18,-2610210.0,CLP,Devolucion - Capital,CC-004,DOC-001297,3101
-,-184361.0,CLP,Pago de servicios - Gastos de Venta,CC-001,DOC-002214,5103
+2026-07-07,-184361.0,CLP,Pago de servicios - Gastos de Venta,CC-001,DOC-002214,5103
 2025-09-09,-1830969.0,CLP,Pago de servicios - Prestamos Bancarios,CC-004,DOC-002888,2201
 2026-05-29,2382485.0,USD,Pago de servicios - Proveedores,CC-004,DOC-002068,2101
 2026-05-13,-1730482.0,CLP,Compra de mercaderia - Impuestos por Pagar,CC-008,DOC-000646,2102
