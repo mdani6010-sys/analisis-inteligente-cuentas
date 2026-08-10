@@ -164,84 +164,102 @@ def exportar_excel(resumen, detalle, incompletas):
 
 # ---------- UI ----------
 
+def render_tablero():
+    with st.sidebar:
+        st.header("Datos de entrada")
+        usar_demo = st.checkbox("Usar datos ficticios de ejemplo", value=True)
+        archivo_movs = st.file_uploader("Movimientos (Excel o CSV)", type=["xlsx", "csv"])
+        archivo_f01 = st.file_uploader("Saldos F.01 esperados (opcional, CSV)", type=["csv"])
+
+    if usar_demo and archivo_movs is None:
+        ruta_demo = CARPETA_DATOS / "movimientos.xlsx"
+        if not ruta_demo.exists():
+            st.error(
+                "No encontre datos de ejemplo. Corre primero `python generar_datos.py` "
+                "en esta carpeta."
+            )
+            st.stop()
+        df_original = pd.read_excel(ruta_demo)
+        saldos_f01 = pd.read_csv(CARPETA_DATOS / "saldos_f01.csv")
+    elif archivo_movs is not None:
+        df_original = cargar_archivo(archivo_movs)
+        saldos_f01 = cargar_archivo(archivo_f01) if archivo_f01 is not None else None
+        if saldos_f01 is None:
+            st.info(
+                "No subiste saldos F.01: la validacion de diferencias de cuadratura "
+                "quedara deshabilitada para este archivo."
+            )
+    else:
+        st.info("Sube un archivo o activa los datos de ejemplo para comenzar.")
+        st.stop()
+
+    faltantes_cols = validar_columnas(df_original)
+    if faltantes_cols:
+        st.error(f"Al archivo le faltan columnas obligatorias: {faltantes_cols}. No se puede continuar.")
+        st.stop()
+
+    df_validas, df_incompletas = separar_filas_incompletas(df_original)
+
+    if not df_incompletas.empty:
+        st.warning(
+            f"{len(df_incompletas)} filas tienen datos faltantes en columnas clave "
+            f"(monto, fecha_documento o cuenta_contable) y se excluyeron del analisis. "
+            f"Quedan disponibles en la pestana 'Datos_faltantes' del Excel exportado."
+        )
+
+    detalle, resumen = construir_resumen(df_validas, saldos_f01)
+
+    # --- Resumen ejecutivo ---
+    st.subheader("Resumen ejecutivo")
+    c1, c2, c3, c4, c5 = st.columns(5)
+    c1.metric("Cuentas evaluadas", len(resumen))
+    c2.metric("Cuentas Rojo/Negro", int(resumen["semaforo"].isin(["Rojo", "Negro"]).sum()))
+    c3.metric("Duplicidades totales", int(resumen["duplicidades"].sum()))
+    c4.metric("Partidas antiguas", int(resumen["partidas_antiguas"].sum()))
+    c5.metric("Filas con datos faltantes", len(df_incompletas))
+
+    # --- Tabla resumen por cuenta ---
+    st.subheader("Semaforo por cuenta")
+    st.dataframe(
+        resumen.style.map(pintar_semaforo, subset=["semaforo"]),
+        use_container_width=True,
+        hide_index=True,
+    )
+
+    # --- Detalle de filas flagged ---
+    with st.expander("Ver detalle de filas con anomalias (duplicadas o antiguas)"):
+        detalle_anomalo = detalle[detalle["es_duplicado"] | detalle["es_antigua"]]
+        st.dataframe(detalle_anomalo, use_container_width=True, hide_index=True)
+
+    # --- Export ---
+    st.subheader("Exportar")
+    excel_bytes = exportar_excel(resumen, detalle, df_incompletas)
+    st.download_button(
+        "Descargar Excel con resultados",
+        data=excel_bytes,
+        file_name="analisis_cuentas.xlsx",
+        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    )
+
+
+def render_acerca():
+    ruta_prd = Path(__file__).parent / "prd-v2.md"
+    if not ruta_prd.exists():
+        st.warning("No se encontro prd-v2.md en el proyecto.")
+        return
+    st.markdown(ruta_prd.read_text(encoding="utf-8"))
+
+
 st.title("Analisis Inteligente de Cuentas — Piloto")
 st.caption(
     "Detecta duplicidades, saldos contrarios, partidas antiguas y diferencias de "
     "cuadratura. Los comentarios se generan con reglas fijas (sin IA): no se inventa nada."
 )
 
-with st.sidebar:
-    st.header("Datos de entrada")
-    usar_demo = st.checkbox("Usar datos ficticios de ejemplo", value=True)
-    archivo_movs = st.file_uploader("Movimientos (Excel o CSV)", type=["xlsx", "csv"])
-    archivo_f01 = st.file_uploader("Saldos F.01 esperados (opcional, CSV)", type=["csv"])
+tab_tablero, tab_acerca = st.tabs(["Tablero", "Acerca de / Gobernanza"])
 
-if usar_demo and archivo_movs is None:
-    ruta_demo = CARPETA_DATOS / "movimientos.xlsx"
-    if not ruta_demo.exists():
-        st.error(
-            "No encontre datos de ejemplo. Corre primero `python generar_datos.py` "
-            "en esta carpeta."
-        )
-        st.stop()
-    df_original = pd.read_excel(ruta_demo)
-    saldos_f01 = pd.read_csv(CARPETA_DATOS / "saldos_f01.csv")
-elif archivo_movs is not None:
-    df_original = cargar_archivo(archivo_movs)
-    saldos_f01 = cargar_archivo(archivo_f01) if archivo_f01 is not None else None
-    if saldos_f01 is None:
-        st.info(
-            "No subiste saldos F.01: la validacion de diferencias de cuadratura "
-            "quedara deshabilitada para este archivo."
-        )
-else:
-    st.info("Sube un archivo o activa los datos de ejemplo para comenzar.")
-    st.stop()
+with tab_tablero:
+    render_tablero()
 
-faltantes_cols = validar_columnas(df_original)
-if faltantes_cols:
-    st.error(f"Al archivo le faltan columnas obligatorias: {faltantes_cols}. No se puede continuar.")
-    st.stop()
-
-df_validas, df_incompletas = separar_filas_incompletas(df_original)
-
-if not df_incompletas.empty:
-    st.warning(
-        f"{len(df_incompletas)} filas tienen datos faltantes en columnas clave "
-        f"(monto, fecha_documento o cuenta_contable) y se excluyeron del analisis. "
-        f"Quedan disponibles en la pestana 'Datos_faltantes' del Excel exportado."
-    )
-
-detalle, resumen = construir_resumen(df_validas, saldos_f01)
-
-# --- Resumen ejecutivo ---
-st.subheader("Resumen ejecutivo")
-c1, c2, c3, c4, c5 = st.columns(5)
-c1.metric("Cuentas evaluadas", len(resumen))
-c2.metric("Cuentas Rojo/Negro", int(resumen["semaforo"].isin(["Rojo", "Negro"]).sum()))
-c3.metric("Duplicidades totales", int(resumen["duplicidades"].sum()))
-c4.metric("Partidas antiguas", int(resumen["partidas_antiguas"].sum()))
-c5.metric("Filas con datos faltantes", len(df_incompletas))
-
-# --- Tabla resumen por cuenta ---
-st.subheader("Semaforo por cuenta")
-st.dataframe(
-    resumen.style.map(pintar_semaforo, subset=["semaforo"]),
-    use_container_width=True,
-    hide_index=True,
-)
-
-# --- Detalle de filas flagged ---
-with st.expander("Ver detalle de filas con anomalias (duplicadas o antiguas)"):
-    detalle_anomalo = detalle[detalle["es_duplicado"] | detalle["es_antigua"]]
-    st.dataframe(detalle_anomalo, use_container_width=True, hide_index=True)
-
-# --- Export ---
-st.subheader("Exportar")
-excel_bytes = exportar_excel(resumen, detalle, df_incompletas)
-st.download_button(
-    "Descargar Excel con resultados",
-    data=excel_bytes,
-    file_name="analisis_cuentas.xlsx",
-    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-)
+with tab_acerca:
+    render_acerca()
