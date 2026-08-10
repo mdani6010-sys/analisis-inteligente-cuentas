@@ -80,6 +80,17 @@
     - **Valor mensual liberado: $225.000 CLP**
     - **Valor anual liberado: $2.700.000 CLP**
 
+12. **Debrief — interrogatorio del "gerente escéptico"** (ejercicio de pitch, práctica del módulo) y plan de acción:
+
+    | # | Pregunta que destapó el punto débil | Por qué es débil | Acción concreta | Responsable | Plazo |
+    |---|---|---|---|---|---|
+    | 1 | ¿Por qué se llama "Inteligente" si no corre IA? | El nombre sugiere IA; el producto usa reglas fijas. Nunca se justificó bien en el interrogatorio. | Definir explícitamente en README/PRD/portada que "Inteligente" = lógica contable sistemática, no modelo de IA — o evaluar un nombre menos ambiguo. | María Daniela Salinas | Antes de la próxima presentación |
+    | 2 | ¿Ya lo revisó Seguridad TI / Legal, dado que datos reales viajarían a un servidor externo (Streamlit/Snowflake)? | No se ha hecho esa revisión — hoy es un riesgo real, no solo teórico, en cuanto se suba un archivo real. | Armar un documento de 1 página (flujo de datos: qué se sube, dónde se procesa, que no se guarda) y llevarlo a Seguridad TI y Legal para aprobación formal. Mientras tanto, el tablero solo se usa con datos ficticios. | María Daniela Salinas (redacta) / Gerente de Contabilidad (escala) | Antes de subir el primer archivo real |
+    | 3 | ¿Quién responde si alguien sube datos reales sin autorización, antes de tener login? | Solo existe una política escrita (sección Gobernanza); no hay control técnico que la haga cumplir. | Corto plazo: agregar una clave simple de acceso (interina) y una lista explícita de analistas autorizados en el PRD. Mediano plazo: login real. | Gerente de Contabilidad (autoriza y es responsable del uso hasta que exista el control técnico) | Clave interina: 1 semana. Login real: por definir |
+    | 4 | Las horas liberadas, ¿en qué se convierten realmente? Sin datos medidos, dos veces. | La ficha económica ($2.7M CLP/año) es un supuesto, no una medición — no hay caso real que lo respalde todavía. | Correr un piloto de 1-2 meses con un analista real: medir tiempo real ahorrado y documentar en qué se usó ese tiempo (más auditorías, cruces, políticas, etc.). Revisar la ficha económica con ese dato. | María Daniela Salinas | Piloto: próximos 2 meses de cierre |
+
+    **Prioridad**: (2) y (3) primero — son riesgo real de la empresa hoy. (4) después, con el piloto medido. (1) es más cosmético, pero fácil de resolver antes de la próxima presentación.
+
 ---
 **Próximo paso** (lo más chico que demuestra valor):
 Tablero construido, probado y **publicado** ✅ (código en GitHub, app en vivo en Streamlit Cloud). Sigue: conseguir datos reales de SAP (aunque sea de una sola cuenta) para validar el tablero contra un caso real, no solo ficticio.
