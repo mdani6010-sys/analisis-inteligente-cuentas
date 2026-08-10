@@ -26,6 +26,7 @@
    - **Ajustado a un perfil senior** (analista contable con +13 años de experiencia): sin explicaciones básicas de contabilidad ni lenguaje introductorio — el comentario va directo al hallazgo y su magnitud.
    - Cada comentario debe ser trazable a la regla exacta que lo generó (ej. "tasa de duplicidad > 3%"), para que el analista pueda auditar la lógica y no tenga que confiar a ciegas.
    - El sistema no reemplaza el criterio profesional del analista: es apoyo para priorizar dónde mirar primero, no un veredicto final.
+   - **Umbrales calibrados con datos ficticios, no reales**: los porcentajes que definen el semáforo (ej. duplicidad > 3%, antigüedad > 20%) se ajustaron mirando cómo se comportaba el dataset sintético. El semáforo se muestra con la misma confianza visual sin importar si el caso es típico o atípico — no hay forma de que el tablero avise "este caso es raro, revísalo con más cuidado". Antes de usarlo en producción, los umbrales deben recalibrarse con datos reales, y cuentas con patrones inusuales (nuevas, estacionales, de cierre, fusiones) requieren revisión manual extra en vez de confiar solo en el color.
 
 7. **Si automatizas** — disparador + pasos:
    Disparador: el usuario sube un archivo Excel/CSV al tablero.
