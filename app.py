@@ -65,9 +65,18 @@ def naturaleza_esperada(cuenta_contable):
     return NATURALEZA_POR_PREFIJO.get(prefijo, "desconocida")
 
 
+UMBRAL_DUPLICADOS_AMARILLO = 0.02
+UMBRAL_DUPLICADOS_ROJO = 0.03
+UMBRAL_ANTIGUEDAD = 0.20
+UMBRAL_CUADRATURA_MODERADO = 500
+UMBRAL_CUADRATURA_GRAVE = 50_000
+
+
 def construir_resumen(df, saldos_f01):
     df = df.copy()
-    df["fecha_documento"] = pd.to_datetime(df["fecha_documento"])
+    # errors="coerce": si llega una fecha invalida hasta aca (no deberia, el
+    # flujo normal ya la filtro antes), no revienta la app, queda como NaT.
+    df["fecha_documento"] = pd.to_datetime(df["fecha_documento"], errors="coerce")
     df["es_duplicado"] = detectar_duplicidades(df)
     df["dias_antiguedad"] = (pd.Timestamp(date.today()) - df["fecha_documento"]).dt.days
     df["es_antigua"] = df["dias_antiguedad"] > DIAS_ANTIGUEDAD
@@ -98,28 +107,40 @@ def construir_resumen(df, saldos_f01):
 
         # El comentario solo reporta lo que cruza el mismo umbral que define el
         # semaforo: unos pocos duplicados o partidas antiguas sueltas son ruido
-        # normal, no una observacion real.
+        # normal, no una observacion real. Cada linea nombra el umbral exacto
+        # que se cruzo, para que el comentario sea auditable, no una caja negra.
         comentarios = []
-        if tasa_duplicados > 0.02:
-            comentarios.append(f"{n_duplicados} filas duplicadas (mismo documento, monto y cuenta).")
+        if tasa_duplicados > UMBRAL_DUPLICADOS_AMARILLO:
+            comentarios.append(
+                f"{n_duplicados} filas duplicadas (mismo documento, monto y cuenta) — "
+                f"tasa {tasa_duplicados:.1%} > umbral {UMBRAL_DUPLICADOS_AMARILLO:.0%}."
+            )
         if saldo_contrario:
-            comentarios.append(f"Saldo contrario a su naturaleza ({naturaleza}).")
-        if tasa_antiguas > 0.20:
-            comentarios.append(f"{n_antiguas} partidas con antiguedad mayor a {DIAS_ANTIGUEDAD} dias.")
-        if diferencia_cuadratura is not None and abs(diferencia_cuadratura) > 500:
-            comentarios.append(f"Diferencia de {diferencia_cuadratura:,.0f} vs saldo esperado (F.01).")
+            comentarios.append(
+                f"Saldo contrario a su naturaleza ({naturaleza}): saldo neto {saldo_neto:,.0f}."
+            )
+        if tasa_antiguas > UMBRAL_ANTIGUEDAD:
+            comentarios.append(
+                f"{n_antiguas} partidas con antiguedad mayor a {DIAS_ANTIGUEDAD} dias — "
+                f"tasa {tasa_antiguas:.1%} > umbral {UMBRAL_ANTIGUEDAD:.0%}."
+            )
+        if diferencia_cuadratura is not None and abs(diferencia_cuadratura) > UMBRAL_CUADRATURA_MODERADO:
+            comentarios.append(
+                f"Diferencia de {diferencia_cuadratura:,.0f} vs saldo esperado (F.01) — "
+                f"umbral {UMBRAL_CUADRATURA_MODERADO:,.0f}."
+            )
         if not comentarios:
             comentarios.append("Sin observaciones.")
 
         # Semaforo (umbrales sobre tasa, no conteo absoluto, para no castigar
         # por igual a cuentas con mucho o poco volumen de movimientos)
-        descuadre_grave = diferencia_cuadratura is not None and abs(diferencia_cuadratura) > 50_000
-        descuadre_moderado = diferencia_cuadratura is not None and abs(diferencia_cuadratura) > 500
+        descuadre_grave = diferencia_cuadratura is not None and abs(diferencia_cuadratura) > UMBRAL_CUADRATURA_GRAVE
+        descuadre_moderado = diferencia_cuadratura is not None and abs(diferencia_cuadratura) > UMBRAL_CUADRATURA_MODERADO
         if saldo_contrario or descuadre_grave:
             semaforo = "Negro"
-        elif descuadre_moderado or tasa_duplicados > 0.03:
+        elif descuadre_moderado or tasa_duplicados > UMBRAL_DUPLICADOS_ROJO:
             semaforo = "Rojo"
-        elif tasa_antiguas > 0.20 or tasa_duplicados > 0.02:
+        elif tasa_antiguas > UMBRAL_ANTIGUEDAD or tasa_duplicados > UMBRAL_DUPLICADOS_AMARILLO:
             semaforo = "Amarillo"
         else:
             semaforo = "Verde"
@@ -198,13 +219,21 @@ def render_tablero():
         st.error(f"Al archivo le faltan columnas obligatorias: {faltantes_cols}. No se puede continuar.")
         st.stop()
 
+    # Una fecha mal escrita (no vacia, pero invalida) se trata igual que un
+    # dato faltante: se marca como dudosa, no se deja reventar el analisis.
+    fechas_antes = df_original["fecha_documento"].isna().sum()
+    df_original["fecha_documento"] = pd.to_datetime(df_original["fecha_documento"], errors="coerce")
+    n_fechas_invalidas = int(df_original["fecha_documento"].isna().sum() - fechas_antes)
+
     df_validas, df_incompletas = separar_filas_incompletas(df_original)
 
     if not df_incompletas.empty:
         st.warning(
-            f"{len(df_incompletas)} filas tienen datos faltantes en columnas clave "
+            f"{len(df_incompletas)} filas tienen datos faltantes o dudosos en columnas clave "
             f"(monto, fecha_documento o cuenta_contable) y se excluyeron del analisis. "
-            f"Quedan disponibles en la pestana 'Datos_faltantes' del Excel exportado."
+            + (f"De esas, {n_fechas_invalidas} tenian una fecha invalida (no vacia, mal escrita). "
+               if n_fechas_invalidas else "")
+            + "Quedan disponibles en la pestana 'Datos_faltantes' del Excel exportado."
         )
 
     detalle, resumen = construir_resumen(df_validas, saldos_f01)

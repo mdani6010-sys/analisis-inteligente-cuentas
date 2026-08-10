@@ -20,12 +20,12 @@
    - El Excel exportado refleja exactamente lo mostrado en el tablero.
    - Correr `python test_deteccion.py` después de cualquier cambio a la lógica de detección, para confirmar que sigue en 100% antes de subir el cambio.
 
-6. **Guardrails / estilo**:
-   - No inventar ni suponer: los comentarios se basan solo en reglas fijas sobre los datos, nunca en inferencias no verificables.
-   - Ser crítico: alertar activamente cuando falten datos necesarios para evaluar una anomalía (ej. columna vacía, fecha inválida).
-   - Marcar explícitamente cualquier caso dudoso en vez de omitirlo.
+6. **Guardrails / estilo** — auditados con revisión adversarial (ver nota al final):
+   - No inventar ni suponer: los comentarios se basan solo en reglas fijas sobre los datos, nunca en inferencias no verificables. ✅
+   - Ser crítico: alertar activamente cuando falten datos necesarios para evaluar una anomalía (ej. columna vacía, fecha inválida). ✅ (fecha inválida corregida — antes tumbaba la app, ver nota).
+   - Marcar explícitamente cualquier caso dudoso en vez de omitirlo. ✅ (misma corrección).
    - **Ajustado a un perfil senior** (analista contable con +13 años de experiencia): sin explicaciones básicas de contabilidad ni lenguaje introductorio — el comentario va directo al hallazgo y su magnitud.
-   - Cada comentario debe ser trazable a la regla exacta que lo generó (ej. "tasa de duplicidad > 3%"), para que el analista pueda auditar la lógica y no tenga que confiar a ciegas.
+   - Cada comentario debe ser trazable a la regla exacta que lo generó (ej. "tasa de duplicidad > 3%"), para que el analista pueda auditar la lógica y no tenga que confiar a ciegas. ✅ (antes el comentario mostraba solo el conteo, no el umbral cruzado — corregido).
    - El sistema no reemplaza el criterio profesional del analista: es apoyo para priorizar dónde mirar primero, no un veredicto final.
    - **Umbrales calibrados con datos ficticios, no reales**: los porcentajes que definen el semáforo (ej. duplicidad > 3%, antigüedad > 20%) se ajustaron mirando cómo se comportaba el dataset sintético. El semáforo se muestra con la misma confianza visual sin importar si el caso es típico o atípico — no hay forma de que el tablero avise "este caso es raro, revísalo con más cuidado". Antes de usarlo en producción, los umbrales deben recalibrarse con datos reales, y cuentas con patrones inusuales (nuevas, estacionales, de cierre, fusiones) requieren revisión manual extra en vez de confiar solo en el color.
 
@@ -55,7 +55,7 @@
    - **Despliegue**: Streamlit Community Cloud, conectado directo al repo de GitHub (rama `main`, archivo `app.py`). Cada vez que se sube un cambio (`git push`), la app publicada se actualiza sola en 1-2 minutos.
 
 10. **Gobernanza**:
-    - **Quién puede usarlo**: exclusivo para personal del área contable/financiera (analistas, supervisores, auditoría interna) — no es una herramienta de uso general. El link no se comparte fuera del equipo.
+    - **Quién puede usarlo**: exclusivo para personal del área contable/financiera (analistas, supervisores, auditoría interna) — no es una herramienta de uso general. El link no se comparte fuera del equipo. ⚠️ **Brecha conocida, sin corregir**: esto es una política, no un control técnico — la URL es pública y no tiene login (ver Alcance, sección 8: "NO: Login/usuarios/permisos"). Cualquiera con el link accede, no solo el área contable. Corregirlo requiere agregar autenticación (fuera del alcance del piloto).
     - **Dueño del sistema**: los Analistas Contables del Departamento de Contabilidad. Son responsables de qué datos suben, de revisar los resultados y de cualquier decisión tomada a partir del análisis.
     - **Rol del sistema vs. rol humano**: el tablero **detecta y prioriza** (semáforo + comentarios por reglas); **no decide ni ejecuta** ninguna acción contable. La decisión final y el ajuste en el sistema contable siempre los hace el analista humano.
     - **Trazabilidad**: cada análisis queda respaldado en el Excel exportado (fecha, reglas aplicadas, resultado por cuenta) — sirve como evidencia ante auditoría interna o externa. Los cambios al código y la lógica de detección quedan versionados en GitHub (quién cambió qué y cuándo).
