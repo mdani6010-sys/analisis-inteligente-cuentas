@@ -31,6 +31,34 @@ NATURALEZA_POR_PREFIJO = {
 st.set_page_config(page_title="Analisis Inteligente de Cuentas", layout="wide")
 
 
+# ---------- Acceso ----------
+
+def verificar_acceso():
+    """Clave interina (mitigacion #3 del debrief): si no hay clave configurada
+    en st.secrets (ej. desarrollo local), no bloquea. En Streamlit Cloud, se
+    configura APP_PASSWORD en Settings > Secrets para restringir el acceso."""
+    try:
+        clave_configurada = st.secrets["APP_PASSWORD"]
+    except Exception:
+        clave_configurada = None
+
+    if not clave_configurada:
+        return True
+    if st.session_state.get("acceso_autorizado"):
+        return True
+
+    st.title("Analisis Inteligente de Cuentas")
+    st.write("Acceso restringido — uso exclusivo de analistas contables autorizados.")
+    clave = st.text_input("Clave de acceso", type="password")
+    if clave:
+        if clave == clave_configurada:
+            st.session_state["acceso_autorizado"] = True
+            st.rerun()
+        else:
+            st.error("Clave incorrecta.")
+    return False
+
+
 # ---------- Carga y validacion ----------
 
 def cargar_archivo(archivo):
@@ -203,6 +231,12 @@ def render_tablero():
         df_original = pd.read_excel(ruta_demo)
         saldos_f01 = pd.read_csv(CARPETA_DATOS / "saldos_f01.csv")
     elif archivo_movs is not None:
+        st.warning(
+            "⚠️ Estas subiendo un archivo propio. Si contiene datos reales de la empresa: "
+            "confirma primero que Seguridad TI y Legal ya aprobaron procesar estos datos en "
+            "Streamlit Cloud (servidor externo) — ver plan de accion en el PRD, pestana "
+            "'Acerca de / Gobernanza'. Mientras no este esa aprobacion, usa solo datos ficticios."
+        )
         df_original = cargar_archivo(archivo_movs)
         saldos_f01 = cargar_archivo(archivo_f01) if archivo_f01 is not None else None
         if saldos_f01 is None:
@@ -279,16 +313,19 @@ def render_acerca():
     st.markdown(ruta_prd.read_text(encoding="utf-8"))
 
 
-st.title("Analisis Inteligente de Cuentas — Piloto")
-st.caption(
-    "Detecta duplicidades, saldos contrarios, partidas antiguas y diferencias de "
-    "cuadratura. Los comentarios se generan con reglas fijas (sin IA): no se inventa nada."
-)
+if verificar_acceso():
+    st.title("Analisis Inteligente de Cuentas — Piloto")
+    st.caption(
+        "\"Inteligente\" = aplica reglas y logica contable de forma sistematica — "
+        "NO usa un modelo de IA/LLM en tiempo de ejecucion. Detecta duplicidades, "
+        "saldos contrarios, partidas antiguas y diferencias de cuadratura con reglas "
+        "fijas: no se inventa nada."
+    )
 
-tab_tablero, tab_acerca = st.tabs(["Tablero", "Acerca de / Gobernanza"])
+    tab_tablero, tab_acerca = st.tabs(["Tablero", "Acerca de / Gobernanza"])
 
-with tab_tablero:
-    render_tablero()
+    with tab_tablero:
+        render_tablero()
 
-with tab_acerca:
-    render_acerca()
+    with tab_acerca:
+        render_acerca()
