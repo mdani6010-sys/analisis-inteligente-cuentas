@@ -18,6 +18,7 @@ import pandas as pd
 import streamlit as st
 
 from error_handler import registrar_error
+from parsers import leer_archivo_flexible, normalizar_movimientos, normalizar_saldos_f01
 
 CARPETA_DATOS = Path(__file__).parent / "datos"
 COLUMNAS_REQUERIDAS = [
@@ -68,10 +69,7 @@ def verificar_acceso():
 def cargar_archivo(archivo):
     if archivo is None:
         return None
-    nombre = archivo.name.lower()
-    if nombre.endswith(".csv"):
-        return pd.read_csv(archivo)
-    return pd.read_excel(archivo)
+    return leer_archivo_flexible(archivo)
 
 
 def validar_columnas(df):
@@ -340,7 +338,7 @@ def render_tablero():
         st.header("Datos de entrada")
         usar_demo = st.checkbox("Usar datos ficticios de ejemplo", value=True)
         archivo_movs = st.file_uploader("Movimientos (Excel o CSV)", type=["xlsx", "csv"])
-        archivo_f01 = st.file_uploader("Saldos F.01 esperados (opcional, CSV)", type=["csv"])
+        archivo_f01 = st.file_uploader("Saldos F.01 esperados (opcional, Excel o CSV)", type=["xlsx", "csv"])
 
     if usar_demo and archivo_movs is None:
         ruta_demo = CARPETA_DATOS / "movimientos.xlsx"
@@ -359,8 +357,10 @@ def render_tablero():
             "Streamlit Cloud (servidor externo) — ver plan de accion en el PRD, pestana "
             "'Acerca de / Gobernanza'. Mientras no este esa aprobacion, usa solo datos ficticios."
         )
-        df_original = cargar_archivo(archivo_movs)
-        saldos_f01 = cargar_archivo(archivo_f01) if archivo_f01 is not None else None
+        df_original = normalizar_movimientos(cargar_archivo(archivo_movs))
+        saldos_f01 = cargar_archivo(archivo_f01)
+        if saldos_f01 is not None:
+            saldos_f01 = normalizar_saldos_f01(saldos_f01)
         if saldos_f01 is None:
             st.info(
                 "No subiste saldos F.01: la validacion de diferencias de cuadratura "

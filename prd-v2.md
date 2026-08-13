@@ -45,12 +45,12 @@
    - Exportar resultados a Excel: **Detalle_Limpio** (con columna `antiguedad_dias` y `monto_duplicado`, y con las partidas que se compensan entre sí ya sacadas), **Partidas_Compensadas** (mismo monto, signo contrario, misma cuenta — se anulan, pero quedan trazables con `par_compensacion` para auditarlas), **Detalle_Completo** (todo, sin filtrar) y **Datos_faltantes**
    - Tabla editable para confirmar/corregir la naturaleza (deudora/acreedora) por cuenta, en vez de confiar ciegamente en el supuesto por prefijo
    - Aviso `⚠` de confiabilidad por muestra chica (<10 filas) o patrón atípico frente a otras cuentas del mismo archivo (no cambia el color del semáforo, solo baja la confianza del hallazgo)
+   - **Lectura flexible de archivos reales de SAP** (`parsers.py`) ✅ **Nuevo**: el archivo subido ya no tiene que traer exactamente las columnas `fecha_documento, monto, moneda, glosa, centro_costo, referencia, cuenta_contable` — si trae nombres de un export SAP real (`Cuenta de mayor`, `Importe en moneda local`, `Saldo Debe`/`Saldo Haber`, etc.), se mapean automáticamente. Soporta encoding UTF-8/Latin-1/CP1252, separador `;` o `,`, y filas de metadata (nombre de empresa, RUT, periodo) antes del encabezado real — todo esto es típico de un export FBL3N/BALANCE de SAP. El saldo F.01 esperado ahora se acepta en Excel o CSV (antes solo CSV). Si el archivo ya viene en el formato exacto (como los datos ficticios), no se toca nada.
 
    **NO (por ahora):**
-   - Conexión real a SAP (FBL3N / F.01)
+   - Conexión automática a SAP (seguir requiriendo que el analista exporte y suba el archivo — no hay integración API en vivo)
    - Comentarios generados con IA vía API (se evalúa a futuro, tiene costo)
    - Login / usuarios / permisos
-   - Comparación automática contra el balance F.01 real
    - Rearmar como Frontend (Netlify) + Backend (Supabase) — se evaluó y se descartó por ahora: Streamlit ya cumple frontend+backend en uno, y alcanza para que otros usuarios lo usen vía URL. Se reconsidera si el proyecto necesita guardar datos persistentes entre sesiones (ahí sí conviene Supabase).
 
 9. **Publicación y versionado** — ✅ hecho:
@@ -111,9 +111,14 @@
 
     **Prioridad**: (2) y (3) primero — son riesgo real de la empresa hoy. (4) después, con el piloto medido. (1) resuelto.
 
+14. **Primera validación con datos reales** (2026-08-12, cuenta 234101 — MLL, export SAP FBL3N + BALANCE):
+    - El archivo real no traía las columnas exactas esperadas (nombres SAP, encoding Latin-1, filas de metadata) — se agregó `parsers.py` para mapearlo sin tocar la lógica de detección (ver punto 8). Después del cambio, `test_deteccion.py` se corrió de nuevo sobre los datos ficticios y se mantuvo en **12/12 (100%)** — sin regresión.
+    - Resultado sobre el caso real: el saldo neto del auxiliar (2.528 movimientos válidos) coincidió con el saldo del F.01 **al centavo** ($6.793.771,71 en ambos — diferencia de cuadratura ≈ $0). El semáforo salió **Negro** igual, por dos hallazgos distintos: (a) saldo contrario a la naturaleza asumida por prefijo (cuenta 2xxx = acreedora, pero el saldo neto es positivo — naturaleza no confirmada, por eso el comentario lo marca como supuesto sin verificar); (b) el 100% de las partidas tiene más de 90 días (todas fechadas 2025-01-31, más de un año antes de la fecha del análisis) — sugiere revisar si el export está desactualizado o la cuenta está inactiva.
+    - **Nota de proceso**: un análisis exploratorio previo con un script suelto (fuera de este repo) había reportado una diferencia de cuadratura del 9.307% ($632M) — ese número era incorrecto, producto de un bug en ese script (no en `app.py`/`parsers.py`), y no de un problema real en los datos. Se descarta esa cifra; la reconciliación real, corrida sobre el código de producción, es la de este punto.
+
 ---
 **Próximo paso** (lo más chico que demuestra valor):
-Tablero construido, probado y **publicado** ✅ (código en GitHub, app en vivo en Streamlit Cloud). Sigue: conseguir datos reales de SAP (aunque sea de una sola cuenta) para validar el tablero contra un caso real, no solo ficticio.
+Tablero construido, probado y **publicado** ✅ (código en GitHub, app en vivo en Streamlit Cloud). Primera cuenta real validada ✅ (punto 14). Sigue: repetir con 2-3 cuentas más de distinta naturaleza (deudora y acreedora) para confirmar que el mapeo de columnas SAP generaliza, y usar ese resultado para calibrar los umbrales del semáforo con datos reales (hoy están calibrados con datos ficticios, ver punto 6).
 
 **Qué falta para empezar** (datos / insumos):
-- Datos reales de SAP (FBL3N/F.01) — cuando estén, se reemplaza el dataset ficticio por el real sin cambiar la lógica del tablero.
+- Datos reales de SAP (FBL3N/F.01) de más cuentas — el mapeo de columnas ya está resuelto (punto 8); falta ampliar la muestra para recalibrar umbrales.

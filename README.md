@@ -14,6 +14,10 @@ saldos contrarios a su naturaleza, partidas antiguas (>90 días) y diferencias d
 cuadratura contra un saldo de referencia (F.01). Muestra un semáforo por cuenta,
 comentarios explicativos por reglas (sin IA) y permite exportar el resultado a Excel.
 
+Acepta tanto datos ficticios/planos como exports reales de SAP (columnas, encoding
+y formato distintos) — `parsers.py` los mapea automáticamente al formato que usa
+el tablero, sin intervención manual.
+
 Ver [prd-v2.md](prd-v2.md) para el detalle completo del proyecto (problema, alcance,
 guardrails, gobernanza, ficha económica y el plan de acción sobre puntos débiles).
 Ver [SEGURIDAD-Y-DATOS.md](SEGURIDAD-Y-DATOS.md) para el resumen de flujo de datos
